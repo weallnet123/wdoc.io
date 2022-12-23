@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the onError method from the RetryInterceptor class, for the Dart programming language.">
+  <title>onError method - RetryInterceptor class - retry_interceptor library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">wmobile</a></li>
+    <li><a href="../../dio_retry_retry_interceptor/dio_retry_retry_interceptor-library.html">retry_interceptor</a></li>
+    <li><a href="../../dio_retry_retry_interceptor/RetryInterceptor-class.html">RetryInterceptor</a></li>
+    <li class="self-crumb">onError method</li>
+  </ol>
+  <div class="self-name">onError</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-method">onError</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+<div>
+  <ol class="annotation-list">
+    <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+  </ol>
+</div>
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a></span>
+<span class="name ">onError</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="onError-param-err"><span class="type-annotation"><a href="https://pub.dev/documentation/dio/4.0.6/dio/DioError-class.html">DioError</a></span> <span class="parameter-name">err</span>, </span></li>
+<li><span class="parameter" id="onError-param-handler"><span class="type-annotation"><a href="https://pub.dev/documentation/dio/4.0.6/dio/ErrorInterceptorHandler-class.html">ErrorInterceptorHandler</a></span> <span class="parameter-name">handler</span></span></li>
+</ol>)
+
+      <div class="features">override</div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>The callback will be executed on error.</p>
+<p>If you want to continue the error , call <code>handler.next</code>.</p>
+<p>If you want to complete the response with some custom data directly,
+you can resolve a <a href="https://pub.dev/documentation/dio/4.0.6/dio/Response-class.html">Response</a> object with <code>handler.resolve</code> and other
+error interceptor(s) will be skipped.</p>
+<p>If you want to complete the response with an error message directly,
+you can reject a <a href="https://pub.dev/documentation/dio/4.0.6/dio/DioError-class.html">DioError</a> object with <code>handler.reject</code>, and other
+ error interceptor(s) will be skipped.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+Future onError(DioError err, ErrorInterceptorHandler handler) async {
+  final _errStatus = _shouldRetry(err);
+  if (_errStatus == &#39;NO_INTERNET&#39;) {
+    try {
+      return requestRetrier
+          .scheduleRequestRetryConnectivity(err.requestOptions)
+          .then((value) =&gt; handler.resolve(value));
+    } catch (e) {
+      &#47;&#47; Let any new error from the retrier pass through
+      return e;
+    }
+  } else if (_errStatus == &#39;TOKEN_EXPIRED&#39;) {
+    try {
+      return requestRetrier
+          .scheduleRequestRetryToken(err.requestOptions)
+          .then((value) =&gt; handler.resolve(value));
+    } catch (e) {
+      &#47;&#47; Let any new error from the retrier pass through
+      return e;
+    }
+  } else if (_errStatus == &#39;TIMEOUT&#39;) {
+    var extra = RetryOptions.fromExtra(err.requestOptions) ?? _options;
+
+    var shouldRetry = extra.retries &gt; 0 &amp;&amp; await _options.retryEvaluator(err);
+    if (shouldRetry) {
+      if (extra.retryInterval.inMilliseconds &gt; 0) {
+        await Future.delayed(extra.retryInterval);
+      }
+
+      &#47;&#47; Update options to decrease retry count before try
+      extra = extra.copyWith(retries: extra.retries - 1);
+      err.requestOptions.extra = err.requestOptions.extra
+        ..addAll(extra.toExtra());
+      try {
+        return _dio
+            .request(
+              err.requestOptions.path,
+              cancelToken: err.requestOptions.cancelToken,
+              data: err.requestOptions.data,
+              onReceiveProgress: err.requestOptions.onReceiveProgress,
+              onSendProgress: err.requestOptions.onSendProgress,
+              queryParameters: err.requestOptions.queryParameters,
+              options: err.requestOptions.toOptions(),
+            )
+            .then((value) =&gt; handler.resolve(value));
+      } catch (e) {
+        return e;
+      }
+    }
+  }
+  return super.onError(err, handler);
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">wmobile</a></li>
+  <li><a href="../../dio_retry_retry_interceptor/dio_retry_retry_interceptor-library.html">retry_interceptor</a></li>
+  <li><a href="../../dio_retry_retry_interceptor/RetryInterceptor-class.html">RetryInterceptor</a></li>
+  <li class="self-crumb">onError method</li>
+</ol>
+
+
+    <h5>RetryInterceptor class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../dio_retry_retry_interceptor/RetryInterceptor-class.html#constructors">Constructors</a></li>
+          <li><a href="../../dio_retry_retry_interceptor/RetryInterceptor/RetryInterceptor.html">RetryInterceptor</a></li>
+
+
+    <li class="section-title">
+      <a href="../../dio_retry_retry_interceptor/RetryInterceptor-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li><a href="../../dio_retry_retry_interceptor/RetryInterceptor/requestRetrier.html">requestRetrier</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li><a href="../../dio_retry_retry_interceptor/RetryInterceptor/sharedPrefHelper.html">sharedPrefHelper</a></li>
+
+    <li class="section-title"><a href="../../dio_retry_retry_interceptor/RetryInterceptor-class.html#instance-methods">Methods</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li><a href="../../dio_retry_retry_interceptor/RetryInterceptor/onError.html">onError</a></li>
+    <li><a href="../../dio_retry_retry_interceptor/RetryInterceptor/onRequest.html">onRequest</a></li>
+    <li class="inherited"><a href="https://pub.dev/documentation/dio/4.0.6/dio/Interceptor/onResponse.html">onResponse</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
+
+    <li class="section-title inherited"><a href="../../dio_retry_retry_interceptor/RetryInterceptor-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

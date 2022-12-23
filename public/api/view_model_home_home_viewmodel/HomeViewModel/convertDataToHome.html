@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the convertDataToHome method from the HomeViewModel class, for the Dart programming language.">
+  <title>convertDataToHome method - HomeViewModel class - home_viewmodel library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">wmobile</a></li>
+    <li><a href="../../view_model_home_home_viewmodel/view_model_home_home_viewmodel-library.html">home_viewmodel</a></li>
+    <li><a href="../../view_model_home_home_viewmodel/HomeViewModel-class.html">HomeViewModel</a></li>
+    <li class="self-crumb">convertDataToHome method</li>
+  </ol>
+  <div class="self-name">convertDataToHome</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-method">convertDataToHome</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="../../view_model_home_home/Home-class.html">Home</a></span>
+<span class="name ">convertDataToHome</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="convertDataToHome-param-json"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span></li>
+</ol>)
+
+      <div class="features">inherited</div>
+
+    </section>
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Home convertDataToHome(Map&lt;String, dynamic&gt; json) {
+  Home item = Home.fromJson(json);
+  if (item.videos != null &amp;&amp; item.videos!.length &gt; 0) {
+    item.videos!.forEach((v) {
+      if (v.imageURL != null &amp;&amp; v.imageURL!.length &gt; 30) {
+        String temp = v.imageURL!;
+        final index = temp.lastIndexOf(&#39;.&#39;);
+        if (index &gt;= v.imageURL!.length - 6) {
+          v.sImageURL = temp.replaceFirst(RegExp(&#39;.&#39;), &#39;_small.&#39;, index);
+          v.mImageURL = temp.replaceFirst(RegExp(&#39;.&#39;), &#39;_medium.&#39;, index);
+        } else {
+          v.sImageURL = temp + &#39;_small&#39;;
+          v.mImageURL = temp + &#39;_medium&#39;;
+        }
+      }
+    });
+  }
+  if (item.movies != null &amp;&amp; item.movies!.length &gt; 0) {
+    item.movies!.forEach((m) {
+      if (m.imageURL != null &amp;&amp; m.imageURL!.length &gt; 30) {
+        String temp = m.imageURL!;
+        final index = temp.lastIndexOf(&#39;.&#39;);
+        if (index &gt;= m.imageURL!.length - 6) {
+          m.sImageURL = temp.replaceFirst(RegExp(&#39;.&#39;), &#39;_small.&#39;, index);
+          m.mImageURL = temp.replaceFirst(RegExp(&#39;.&#39;), &#39;_medium.&#39;, index);
+        } else {
+          m.sImageURL = temp + &#39;_small&#39;;
+          m.mImageURL = temp + &#39;_medium&#39;;
+        }
+      }
+    });
+  }
+  if (item.musics != null &amp;&amp; item.musics!.length &gt; 0) {
+    item.musics!.forEach((m) {
+      if (m.imageURL != null &amp;&amp; m.imageURL!.length &gt; 30) {
+        String temp = m.imageURL!;
+        final index = temp.lastIndexOf(&#39;.&#39;);
+        if (index &gt;= m.imageURL!.length - 6) {
+          m.sImageURL = temp.replaceFirst(RegExp(&#39;.&#39;), &#39;_small.&#39;, index);
+          m.mImageURL = temp.replaceFirst(RegExp(&#39;.&#39;), &#39;_medium.&#39;, index);
+        } else {
+          m.sImageURL = temp + &#39;_small&#39;;
+          m.mImageURL = temp + &#39;_medium&#39;;
+        }
+      }
+    });
+  }
+  if (item.channelProfiles != null &amp;&amp; item.channelProfiles!.length &gt; 0) {
+    item.channelProfiles!.forEach((c) {
+      if (c.logoURL != null &amp;&amp; c.logoURL!.length &gt; 30) {
+        final index = c.logoURL!.lastIndexOf(&#39;.&#39;);
+        c.sLogoURL = c.logoURL!.replaceFirst(RegExp(&#39;.&#39;), &#39;_small.&#39;, index);
+        c.mLogoURL = c.logoURL!.replaceFirst(RegExp(&#39;.&#39;), &#39;_medium.&#39;, index);
+      }
+    });
+  }
+  if (item.newss != null &amp;&amp; item.newss!.length &gt; 0) {
+    item.newss!.forEach((n) {
+      if (n.imageUrl != null &amp;&amp; n.imageUrl!.length &gt; 30) {
+        String temp = n.imageUrl!;
+        final index = temp.lastIndexOf(&#39;.&#39;);
+        if (index &gt;= n.imageUrl!.length - 6) {
+          n.sImageUrl = temp.replaceFirst(RegExp(&#39;.&#39;), &#39;_small.&#39;, index);
+          n.mImageUrl = temp.replaceFirst(RegExp(&#39;.&#39;), &#39;_medium.&#39;, index);
+        } else {
+          n.sImageUrl = temp + &#39;_small&#39;;
+          n.mImageUrl = temp + &#39;_medium&#39;;
+        }
+      }
+      if (n.channelLogoUrl != null &amp;&amp; n.channelLogoUrl!.length &gt; 30) {
+        String temp = n.channelLogoUrl!;
+        final index = temp.lastIndexOf(&#39;.&#39;);
+        if (index &gt;= n.channelLogoUrl!.length - 6) {
+          n.sChannelLogoUrl =
+              temp.replaceFirst(RegExp(&#39;.&#39;), &#39;_small.&#39;, index);
+          n.mChannelLogoUrl =
+              temp.replaceFirst(RegExp(&#39;.&#39;), &#39;_medium.&#39;, index);
+        } else {
+          n.sChannelLogoUrl = temp + &#39;_small&#39;;
+          n.mChannelLogoUrl = temp + &#39;_medium&#39;;
+        }
+      }
+    });
+  }
+  return item;
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">wmobile</a></li>
+  <li><a href="../../view_model_home_home_viewmodel/view_model_home_home_viewmodel-library.html">home_viewmodel</a></li>
+  <li><a href="../../view_model_home_home_viewmodel/HomeViewModel-class.html">HomeViewModel</a></li>
+  <li class="self-crumb">convertDataToHome method</li>
+</ol>
+
+
+    <h5>HomeViewModel class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../view_model_home_home_viewmodel/HomeViewModel-class.html#constructors">Constructors</a></li>
+          <li><a href="../../view_model_home_home_viewmodel/HomeViewModel/HomeViewModel.html">HomeViewModel</a></li>
+
+
+    <li class="section-title inherited">
+      <a href="../../view_model_home_home_viewmodel/HomeViewModel-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/apiStatusStore.html">apiStatusStore</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/arrSearchParam.html">arrSearchParam</a></li>
+    <li class="inherited"><a href="https://pub.dev/documentation/mobx/2.0.7/mobx/Store/context.html">context</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/getUrls.html">getUrls</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/home.html">home</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/paging.html">paging</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/processing.html">processing</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+
+    <li class="section-title inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel-class.html#instance-methods">Methods</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/convertDataToHome.html">convertDataToHome</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/getSearchParam.html">getSearchParam</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/initData.html">initData</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/initHome.html">initHome</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/initLocalData.html">initLocalData</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/initModel.html">initModel</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/setSearchParam.html">setSearchParam</a></li>
+    <li class="inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel/toString.html">toString</a></li>
+
+    <li class="section-title inherited"><a href="../../view_model_home_home_viewmodel/HomeViewModel-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

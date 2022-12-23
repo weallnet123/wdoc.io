@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the ConvexAppBar class from the convex_bottom_bar library, for the Dart programming language.">
+  <title>ConvexAppBar class - convex_bottom_bar library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">wmobile</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ui_widget_convex_bottom_bar_convex_bottom_bar-library.html">convex_bottom_bar</a></li>
+    <li class="self-crumb">ConvexAppBar class</li>
+  </ol>
+  <div class="self-name">ConvexAppBar</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-class">ConvexAppBar</span> class 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>Online example can be found at <a href="http://hacktons.cn/convex_bottom_bar">http://hacktons.cn/convex_bottom_bar</a>.</p>
+<p><img src="https://github.com/hacktons/convex_bottom_bar/raw/master/doc/appbar-theming.png" alt=""></p>
+</section>
+
+
+    <section>
+      <dl class="dl-horizontal">
+        
+  <dt>Inheritance</dt>
+  <dd>
+    <ul class="gt-separated dark clazz-relationships">
+      <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
+        <li><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree-class.html">DiagnosticableTree</a></li>
+        <li><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></li>
+        <li><a href="https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html">StatefulWidget</a></li>
+      <li>ConvexAppBar</li>
+    </ul>
+  </dd>
+
+        
+        
+
+
+        <dt>Available Extensions</dt>
+        <dd><ul class="comma-separated clazz-relationships">
+          <li><a href="https://pub.dev/documentation/flutter_layout_grid/1.0.6/flutter_layout_grid/GridPlacementExtensions.html">GridPlacementExtensions</a></li>
+        </ul></dd>
+
+        
+      </dl>
+    </section>
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+
+    <dl class="constructor-summary-list">
+        <dt id="ConvexAppBar" class="callable">
+          <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/ConvexAppBar.html">ConvexAppBar</a></span><span class="signature">(<span class="parameter" id="-param-key">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="-param-items"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../ui_widget_convex_bottom_bar_item/TabItem-class.html">TabItem</a></span>&gt;</span></span> <span class="parameter-name">items</span>, </span><span class="parameter" id="-param-initialActiveIndex"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">initialActiveIndex</span>, </span><span class="parameter" id="-param-disableDefaultTabController"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">disableDefaultTabController</span>, </span><span class="parameter" id="-param-onTap"><span class="type-annotation"><a href="../ui_widget_convex_bottom_bar_interface/GestureTapIndexCallback.html">GestureTapIndexCallback</a>?</span> <span class="parameter-name">onTap</span>, </span><span class="parameter" id="-param-controller"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/TabController-class.html">TabController</a>?</span> <span class="parameter-name">controller</span>, </span><span class="parameter" id="-param-color"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">color</span>, </span><span class="parameter" id="-param-activeColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">activeColor</span>, </span><span class="parameter" id="-param-backgroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">backgroundColor</span>, </span><span class="parameter" id="-param-gradient"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Gradient-class.html">Gradient</a>?</span> <span class="parameter-name">gradient</span>, </span><span class="parameter" id="-param-height"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">height</span>, </span><span class="parameter" id="-param-curveSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">curveSize</span>, </span><span class="parameter" id="-param-top"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">top</span>, </span><span class="parameter" id="-param-elevation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">elevation</span>, </span><span class="parameter" id="-param-cornerRadius"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">cornerRadius</span>, </span><span class="parameter" id="-param-curve"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/animation/Curve-class.html">Curve</a>?</span> <span class="parameter-name">curve</span>, </span><span class="parameter" id="-param-chipBuilder"><span class="type-annotation"><a href="../ui_widget_convex_bottom_bar_interface/ChipBuilder-class.html">ChipBuilder</a>?</span> <span class="parameter-name">chipBuilder</span>}</span>)</span>
+        </dt>
+        <dd>
+          Construct a new appbar with internal style.
+        </dd>
+        <dt id="ConvexAppBar.badge" class="callable">
+          <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/ConvexAppBar.badge.html">ConvexAppBar.badge</a></span><span class="signature">(<span class="parameter" id="badge-param-badge"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">badge</span>, </span><span class="parameter" id="badge-param-key">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="badge-param-badgeTextColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">badgeTextColor</span>, </span><span class="parameter" id="badge-param-badgeColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">badgeColor</span>, </span><span class="parameter" id="badge-param-badgePadding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a>?</span> <span class="parameter-name">badgePadding</span>, </span><span class="parameter" id="badge-param-badgeMargin"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/EdgeInsets-class.html">EdgeInsets</a>?</span> <span class="parameter-name">badgeMargin</span>, </span><span class="parameter" id="badge-param-badgeBorderRadius"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">badgeBorderRadius</span>, </span><span class="parameter" id="badge-param-items"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../ui_widget_convex_bottom_bar_item/TabItem-class.html">TabItem</a></span>&gt;</span></span> <span class="parameter-name">items</span>, </span><span class="parameter" id="badge-param-initialActiveIndex"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">initialActiveIndex</span>, </span><span class="parameter" id="badge-param-disableDefaultTabController"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">disableDefaultTabController</span>, </span><span class="parameter" id="badge-param-onTap"><span class="type-annotation"><a href="../ui_widget_convex_bottom_bar_interface/GestureTapIndexCallback.html">GestureTapIndexCallback</a>?</span> <span class="parameter-name">onTap</span>, </span><span class="parameter" id="badge-param-controller"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/TabController-class.html">TabController</a>?</span> <span class="parameter-name">controller</span>, </span><span class="parameter" id="badge-param-color"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">color</span>, </span><span class="parameter" id="badge-param-activeColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">activeColor</span>, </span><span class="parameter" id="badge-param-backgroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">backgroundColor</span>, </span><span class="parameter" id="badge-param-gradient"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Gradient-class.html">Gradient</a>?</span> <span class="parameter-name">gradient</span>, </span><span class="parameter" id="badge-param-height"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">height</span>, </span><span class="parameter" id="badge-param-curveSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">curveSize</span>, </span><span class="parameter" id="badge-param-top"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">top</span>, </span><span class="parameter" id="badge-param-elevation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">elevation</span>, </span><span class="parameter" id="badge-param-cornerRadius"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">cornerRadius</span>, </span><span class="parameter" id="badge-param-curve"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/animation/Curve-class.html">Curve</a>?</span> <span class="parameter-name">curve</span>}</span>)</span>
+        </dt>
+        <dd>
+          Construct a new appbar with badge.
+            <div class="constructor-modifier features">factory</div>
+        </dd>
+        <dt id="ConvexAppBar.builder" class="callable">
+          <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/ConvexAppBar.builder.html">ConvexAppBar.builder</a></span><span class="signature">(<span class="parameter" id="builder-param-key">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="builder-param-itemBuilder"><span>required</span> <span class="type-annotation"><a href="../ui_widget_convex_bottom_bar_interface/DelegateBuilder-class.html">DelegateBuilder</a></span> <span class="parameter-name">itemBuilder</span>, </span><span class="parameter" id="builder-param-count"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">count</span>, </span><span class="parameter" id="builder-param-initialActiveIndex"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">initialActiveIndex</span>, </span><span class="parameter" id="builder-param-disableDefaultTabController"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">disableDefaultTabController</span> = <span class="default-value">false</span>, </span><span class="parameter" id="builder-param-onTap"><span class="type-annotation"><a href="../ui_widget_convex_bottom_bar_interface/GestureTapIndexCallback.html">GestureTapIndexCallback</a>?</span> <span class="parameter-name">onTap</span>, </span><span class="parameter" id="builder-param-controller"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/TabController-class.html">TabController</a>?</span> <span class="parameter-name">controller</span>, </span><span class="parameter" id="builder-param-backgroundColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">backgroundColor</span>, </span><span class="parameter" id="builder-param-height"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">height</span>, </span><span class="parameter" id="builder-param-curveSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">curveSize</span>, </span><span class="parameter" id="builder-param-top"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">top</span>, </span><span class="parameter" id="builder-param-elevation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">elevation</span>, </span><span class="parameter" id="builder-param-cornerRadius"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">cornerRadius</span>, </span><span class="parameter" id="builder-param-chipBuilder"><span class="type-annotation"><a href="../ui_widget_convex_bottom_bar_interface/ChipBuilder-class.html">ChipBuilder</a>?</span> <span class="parameter-name">chipBuilder</span>}</span>)</span>
+        </dt>
+        <dd>
+          Define a custom tab style by implement a <a href="../ui_widget_convex_bottom_bar_interface/DelegateBuilder-class.html">DelegateBuilder</a>.
+            <div class="constructor-modifier features">const</div>
+        </dd>
+    </dl>
+  </section>
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="backgroundColor" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/backgroundColor.html">backgroundColor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> 
+
+</dt>
+<dd>
+  Color of the AppBar.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="chipBuilder" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/chipBuilder.html">chipBuilder</a></span>
+  <span class="signature">&#8594; <a href="../ui_widget_convex_bottom_bar_interface/ChipBuilder-class.html">ChipBuilder</a>?</span> 
+
+</dt>
+<dd>
+  Badge chip builder.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="controller" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/controller.html">controller</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/material/TabController-class.html">TabController</a>?</span> 
+
+</dt>
+<dd>
+  Tab controller to work with <a href="https://api.flutter.dev/flutter/material/TabBarView-class.html">TabBarView</a> or <a href="https://api.flutter.dev/flutter/widgets/PageView-class.html">PageView</a>.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="cornerRadius" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/cornerRadius.html">cornerRadius</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> 
+
+</dt>
+<dd>
+  Draw the background with topLeft and topRight corner; Only work work with fixed style
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="count" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/count.html">count</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd>
+  Tab count.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="curveSize" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/curveSize.html">curveSize</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> 
+
+</dt>
+<dd>
+  Size of the curve line.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="disableDefaultTabController" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/disableDefaultTabController.html">disableDefaultTabController</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  Disable access of DefaultTabController to avoid unexpected conflict.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="elevation" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/elevation.html">elevation</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> 
+
+</dt>
+<dd>
+  Elevation for the bar top edge.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features">@<a href="https://pub.dev/documentation/meta/1.7.0/meta/nonVirtual-constant.html">nonVirtual</a>, read-only, inherited</div>
+
+</dd>
+
+        <dt id="height" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/height.html">height</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> 
+
+</dt>
+<dd>
+  Height of the AppBar.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="initialActiveIndex" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/initialActiveIndex.html">initialActiveIndex</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> 
+
+</dt>
+<dd>
+  The initial active index, you can config initialIndex of <a href="https://api.flutter.dev/flutter/material/TabController-class.html">TabController</a> if work with <a href="https://api.flutter.dev/flutter/material/TabBarView-class.html">TabBarView</a> or <a href="https://api.flutter.dev/flutter/widgets/PageView-class.html">PageView</a>.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="itemBuilder" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/itemBuilder.html">itemBuilder</a></span>
+  <span class="signature">&#8594; <a href="../ui_widget_convex_bottom_bar_interface/DelegateBuilder-class.html">DelegateBuilder</a></span> 
+
+</dt>
+<dd>
+  Tab item builder.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="key" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/key.html">key</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> 
+
+</dt>
+<dd class="inherited">
+  Controls how one widget replaces another widget in the tree.
+  <div class="features">final, inherited</div>
+
+</dd>
+
+        <dt id="onTap" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/onTap.html">onTap</a></span>
+  <span class="signature">&#8594; <a href="../ui_widget_convex_bottom_bar_interface/GestureTapIndexCallback.html">GestureTapIndexCallback</a>?</span> 
+
+</dt>
+<dd>
+  Tab Click handler.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span> 
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features">read-only, inherited</div>
+
+</dd>
+
+        <dt id="top" class="property">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/top.html">top</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> 
+
+</dt>
+<dd>
+  The distance that the <code>actionButton</code> top edge is inset from the top of the AppBar.
+  <div class="features">final</div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="createElement" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/StatefulWidget/createElement.html">createElement</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/widgets/StatefulElement-class.html">StatefulElement</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates a <a href="https://api.flutter.dev/flutter/widgets/StatefulElement-class.html">StatefulElement</a> to manage this widget's location in the tree.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="createState" class="callable">
+  <span class="name"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/createState.html">createState</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBarState-class.html">ConvexAppBarState</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates the mutable state for this widget at a given location in the tree.
+  <div class="features">override</div>
+
+</dd>
+
+        <dt id="debugDescribeChildren" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/debugDescribeChildren.html">debugDescribeChildren</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode-class.html">DiagnosticsNode</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a list of <code>DiagnosticsNode</code> objects describing this node's
+children.
+  <div class="features">@<a href="https://pub.dev/documentation/meta/1.7.0/meta/protected-constant.html">protected</a>, inherited</div>
+
+</dd>
+
+        <dt id="debugFillProperties" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/debugFillProperties.html">debugFillProperties</a></span><span class="signature">(<wbr><span class="parameter" id="debugFillProperties-param-properties"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticPropertiesBuilder-class.html">DiagnosticPropertiesBuilder</a></span> <span class="parameter-name">properties</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Add additional properties associated with the node.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a non-existent method or property is accessed.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="toDiagnosticsNode" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toDiagnosticsNode.html">toDiagnosticsNode</a></span><span class="signature">(<wbr><span class="parameter" id="toDiagnosticsNode-param-name">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="toDiagnosticsNode-param-style"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticsTreeStyle.html">DiagnosticsTreeStyle</a>?</span> <span class="parameter-name">style</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode-class.html">DiagnosticsNode</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a debug representation of the object that is used by debugging
+tools and by <a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode/toStringDeep.html">DiagnosticsNode.toStringDeep</a>.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toString.html">toString</a></span><span class="signature">(<wbr><span class="parameter" id="toString-param-minLevel">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticLevel.html">DiagnosticLevel</a></span> <span class="parameter-name">minLevel</span> = <span class="default-value">DiagnosticLevel.info</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="toStringDeep" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringDeep.html">toStringDeep</a></span><span class="signature">(<wbr><span class="parameter" id="toStringDeep-param-prefixLineOne">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">prefixLineOne</span> = <span class="default-value">&#39;&#39;</span>, </span><span class="parameter" id="toStringDeep-param-prefixOtherLines"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">prefixOtherLines</span>, </span><span class="parameter" id="toStringDeep-param-minLevel"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticLevel.html">DiagnosticLevel</a></span> <span class="parameter-name">minLevel</span> = <span class="default-value">DiagnosticLevel.debug</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a string representation of this node and its descendants.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="toStringShallow" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringShallow.html">toStringShallow</a></span><span class="signature">(<wbr><span class="parameter" id="toStringShallow-param-joiner">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">joiner</span> = <span class="default-value">&#39;, &#39;</span>, </span><span class="parameter" id="toStringShallow-param-minLevel"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticLevel.html">DiagnosticLevel</a></span> <span class="parameter-name">minLevel</span> = <span class="default-value">DiagnosticLevel.debug</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a one-line detailed description of the object.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="toStringShort" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/toStringShort.html">toStringShort</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A short, textual description of this widget.
+  <div class="features">inherited</div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features">@<a href="https://pub.dev/documentation/meta/1.7.0/meta/nonVirtual-constant.html">nonVirtual</a>, inherited</div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">wmobile</a></li>
+  <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ui_widget_convex_bottom_bar_convex_bottom_bar-library.html">convex_bottom_bar</a></li>
+  <li class="self-crumb">ConvexAppBar class</li>
+</ol>
+
+
+    <h5>convex_bottom_bar library</h5>
+    <ol>
+  <li class="section-title"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ui_widget_convex_bottom_bar_convex_bottom_bar-library.html#classes">Classes</a></li>
+  <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar-class.html">ConvexAppBar</a></li>
+  <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBarState-class.html">ConvexAppBarState</a></li>
+  <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/StyleProvider-class.html">StyleProvider</a></li>
+
+
+
+  <li class="section-title"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ui_widget_convex_bottom_bar_convex_bottom_bar-library.html#constants">Constants</a></li>
+  <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ACTION_INNER_BUTTON_SIZE-constant.html">ACTION_INNER_BUTTON_SIZE</a></li>
+  <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ACTION_LAYOUT_SIZE-constant.html">ACTION_LAYOUT_SIZE</a></li>
+  <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/BAR_HEIGHT-constant.html">BAR_HEIGHT</a></li>
+  <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/CONVEX_SIZE-constant.html">CONVEX_SIZE</a></li>
+  <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/CURVE_TOP-constant.html">CURVE_TOP</a></li>
+  <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ELEVATION-constant.html">ELEVATION</a></li>
+
+
+
+
+
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <ol>
+
+        <li class="section-title"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar-class.html#constructors">Constructors</a></li>
+          <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/ConvexAppBar.html">ConvexAppBar</a></li>
+          <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/ConvexAppBar.badge.html">badge</a></li>
+          <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/ConvexAppBar.builder.html">builder</a></li>
+
+
+    <li class="section-title">
+      <a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar-class.html#instance-properties">Properties</a>
+    </li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/backgroundColor.html">backgroundColor</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/chipBuilder.html">chipBuilder</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/controller.html">controller</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/cornerRadius.html">cornerRadius</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/count.html">count</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/curveSize.html">curveSize</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/disableDefaultTabController.html">disableDefaultTabController</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/elevation.html">elevation</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/hashCode.html">hashCode</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/height.html">height</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/initialActiveIndex.html">initialActiveIndex</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/itemBuilder.html">itemBuilder</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/key.html">key</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/onTap.html">onTap</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/top.html">top</a></li>
+
+    <li class="section-title"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar-class.html#instance-methods">Methods</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/StatefulWidget/createElement.html">createElement</a></li>
+    <li><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar/createState.html">createState</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/debugDescribeChildren.html">debugDescribeChildren</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/debugFillProperties.html">debugFillProperties</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toDiagnosticsNode.html">toDiagnosticsNode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toString.html">toString</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringDeep.html">toStringDeep</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringShallow.html">toStringShallow</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/toStringShort.html">toStringShort</a></li>
+
+    <li class="section-title inherited"><a href="../ui_widget_convex_bottom_bar_convex_bottom_bar/ConvexAppBar-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

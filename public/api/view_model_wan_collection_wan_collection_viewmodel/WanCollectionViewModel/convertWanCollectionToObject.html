@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the convertWanCollectionToObject method from the WanCollectionViewModel class, for the Dart programming language.">
+  <title>convertWanCollectionToObject method - WanCollectionViewModel class - wan_collection_viewmodel library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">wmobile</a></li>
+    <li><a href="../../view_model_wan_collection_wan_collection_viewmodel/view_model_wan_collection_wan_collection_viewmodel-library.html">wan_collection_viewmodel</a></li>
+    <li><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel-class.html">WanCollectionViewModel</a></li>
+    <li class="self-crumb">convertWanCollectionToObject method</li>
+  </ol>
+  <div class="self-name">convertWanCollectionToObject</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-method">convertWanCollectionToObject</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>
+<span class="name ">convertWanCollectionToObject</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="convertWanCollectionToObject-param-wanCollection"><span class="type-annotation"><a href="../../view_model_wan_collection_wan_collection/WanCollection-class.html">WanCollection</a></span> <span class="parameter-name">wanCollection</span></span></li>
+</ol>)
+
+      <div class="features">inherited</div>
+
+    </section>
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Object convertWanCollectionToObject(WanCollection wanCollection) {
+  final postObject = {
+    &#39;wanCollectionID&#39;: wanCollection.wanCollectionID ?? 0,
+    &#39;code&#39;: wanCollection.code,
+    &#39;name&#39;: wanCollection.name,
+    &#39;nameEn&#39;: wanCollection.nameEn,
+    &#39;type&#39;: wanCollection.type,
+    &#39;itemType&#39;: wanCollection.itemType,
+    &#39;searchKeyword&#39;: wanCollection.searchKeyword,
+    &#39;publishDate&#39;: wanCollection.publishDate != null
+        ? wanCollection.publishDate!.toIso8601String()
+        : &#39;&#39;,
+    &#39;description&#39;: wanCollection.description,
+    &#39;enable&#39;: wanCollection.enable ?? 0,
+    &#39;order&#39;: wanCollection.order ?? 0,
+    &#47;&#47;end table database field
+  };
+  return postObject;
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">wmobile</a></li>
+  <li><a href="../../view_model_wan_collection_wan_collection_viewmodel/view_model_wan_collection_wan_collection_viewmodel-library.html">wan_collection_viewmodel</a></li>
+  <li><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel-class.html">WanCollectionViewModel</a></li>
+  <li class="self-crumb">convertWanCollectionToObject method</li>
+</ol>
+
+
+    <h5>WanCollectionViewModel class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel-class.html#constructors">Constructors</a></li>
+          <li><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/WanCollectionViewModel.html">WanCollectionViewModel</a></li>
+
+
+    <li class="section-title inherited">
+      <a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/apiStatusStore.html">apiStatusStore</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/arrSearchParam.html">arrSearchParam</a></li>
+    <li class="inherited"><a href="https://pub.dev/documentation/mobx/2.0.7/mobx/Store/context.html">context</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/getUrls.html">getUrls</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/processing.html">processing</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/wanCollection.html">wanCollection</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/wanCollectionID.html">wanCollectionID</a></li>
+
+    <li class="section-title inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel-class.html#instance-methods">Methods</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/convertDataToWanCollection.html">convertDataToWanCollection</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/convertWanCollectionToObject.html">convertWanCollectionToObject</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/deleteWanCollection.html">deleteWanCollection</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/getSearchParam.html">getSearchParam</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/initData.html">initData</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/initLocalData.html">initLocalData</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/initModel.html">initModel</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/initWanCollection.html">initWanCollection</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/saveWanCollection.html">saveWanCollection</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/setSearchParam.html">setSearchParam</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/setWanCollectionID.html">setWanCollectionID</a></li>
+    <li class="inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel/toString.html">toString</a></li>
+
+    <li class="section-title inherited"><a href="../../view_model_wan_collection_wan_collection_viewmodel/WanCollectionViewModel-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

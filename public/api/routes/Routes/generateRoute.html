@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the generateRoute method from the Routes class, for the Dart programming language.">
+  <title>generateRoute method - Routes class - routes library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">wmobile</a></li>
+    <li><a href="../../routes/routes-library.html">routes</a></li>
+    <li><a href="../../routes/Routes-class.html">Routes</a></li>
+    <li class="self-crumb">generateRoute method</li>
+  </ol>
+  <div class="self-name">generateRoute</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-method">generateRoute</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Route-class.html">Route</a></span>
+<span class="name ">generateRoute</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="generateRoute-param-settings"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/RouteSettings-class.html">RouteSettings</a></span> <span class="parameter-name">settings</span></span></li>
+</ol>)
+
+      
+
+    </section>
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">static Route&lt;dynamic&gt; generateRoute(RouteSettings settings) {
+  switch (settings.name) {
+    case welcome:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: welcome),
+        builder: (context) =&gt; WelcomeScreen(),
+      );
+    case register:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: register),
+        builder: (context) =&gt; RegisterScreen(),
+      );
+    case media:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: media),
+        builder: (context) =&gt; TabWidget(),
+      );
+    case media_movie_detail:
+      Map arr = settings.arguments as Map;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: media_movie_detail),
+        builder: (context) =&gt; MovieDetailScreen(
+          movieID: arr[&#39;id&#39;],
+          code: arr[&#39;code&#39;] ?? &#39;&#39;,
+        ),
+      );
+    case media_music_detail:
+      Map arr = settings.arguments as Map;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: media_music_detail),
+        builder: (context) =&gt; MusicDetailScreen(
+          musicID: arr[&#39;id&#39;],
+          code: arr[&#39;code&#39;] ?? &#39;&#39;,
+        ),
+      );
+    case media_music_add_playlist:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: media_music_add_playlist),
+        builder: (context) =&gt; MusicAddPlaylistScreen(),
+      );
+    case media_music_create_playlist:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: media_music_create_playlist),
+        builder: (context) =&gt; MusicCreatePlaylistScreen(),
+      );
+    case media_video_detail:
+      Map arr = settings.arguments as Map;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: media_video_detail),
+        builder: (context) =&gt; VideoDetailScreen(
+          videoID: arr[&#39;id&#39;],
+          code: arr[&#39;code&#39;] ?? &#39;&#39;,
+        ),
+      );
+    case channel:
+      final channelCode = settings.arguments as String;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: channel),
+        builder: (context) =&gt; ChannelScreen(channelCode: channelCode),
+      );
+    case channelMovie:
+      final channelCode = settings.arguments as String;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: channelMovie),
+        builder: (context) =&gt; ChannelMovies(channelCode: channelCode),
+      );
+    case channel_quicklook:
+      final channelCode = settings.arguments as String;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: channel_quicklook),
+        builder: (context) =&gt; ChannelQuickLook(channelCode: channelCode),
+      );
+    case media_video_player:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: media_video_player),
+        builder: (context) =&gt; VideoPlayerScreen(),
+      );
+    case news:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: news),
+        builder: (context) =&gt; TabWidget(),
+      );
+    case news_detail:
+      Map arr = settings.arguments as Map;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: news_detail),
+        builder: (context) =&gt; NewsDetailScreen(
+          newsID: arr[&#39;id&#39;],
+          code: arr[&#39;code&#39;] ?? &#39;&#39;,
+        ),
+      );
+    case news_web_view:
+      {
+        Map arr = settings.arguments as Map;
+        return MaterialPageRoute(
+          settings: RouteSettings(name: news_web_view),
+          builder: (context) =&gt; NewsWebViewScreen(
+            newsID: arr[&#39;id&#39;],
+            isEnable: arr[&#39;isEnable&#39;],
+            url: arr[&#39;url&#39;] ?? &#39;&#39;,
+            code: arr[&#39;code&#39;] ?? &#39;&#39;,
+          ),
+        );
+      }
+
+    case news_create_category:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: news_create_category),
+        builder: (context) =&gt; NewsCreateCategoryScreen(),
+      );
+    case news_home:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: news_home_all_networks),
+        builder: (context) =&gt; NewsHomeScreen(),
+      );
+
+    case news_home_all_networks:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: news_home_all_networks),
+        builder: (context) =&gt; AllNetworksScreen(),
+      );
+    case home:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: home),
+        builder: (context) =&gt; TabWidget(),
+      );
+    case chat:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: chat),
+        builder: (context) =&gt; TabWidget(),
+      );
+    case chat_recent:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: chat_recent),
+        builder: (context) =&gt; RecentListWidget(),
+      );
+    case chat_detail:
+      final Map arr = settings.arguments as Map;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: chat_detail),
+        builder: (context) =&gt; ChatDetailScreen(
+          isFriendBlocker: arr[&#39;isFriendBlocker&#39;] ?? false,
+          isFriendBlocked: arr[&#39;isFriendBlocked&#39;] ?? false,
+          code: arr[&#39;code&#39;] ?? &#39;&#39;,
+          chatBoxID: arr[&#39;chatBoxID&#39;],
+        ),
+      );
+    &#47;&#47; final chatBoxCode = settings.arguments as String;
+    &#47;&#47; return MaterialPageRoute(
+    &#47;&#47;   settings: RouteSettings(name: chat_detail),
+    &#47;&#47;   builder: (context) =&gt; ChatDetailScreen(code: chatBoxCode),
+    &#47;&#47; );
+    case chat_create:
+      final isGroup = settings.arguments;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: chat_create),
+        builder: (context) =&gt; ChatCreateScreen(isGroup: isGroup),
+      );
+    case chat_create_group:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: chat_create_group),
+        builder: (context) =&gt; CreateGroupChatScreen(),
+      );
+    case chat_more:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: chat_more),
+        builder: (context) =&gt; ChatMore(),
+      );
+    case chat_group_info:
+      final chatBox = settings.arguments;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: chat_group_info),
+        builder: (context) =&gt; GroupInfoScreen(chatBox: chatBox),
+      );
+    case chat_search_user:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: chat_search_user),
+        builder: (context) =&gt; ChatSearchUserScreen(),
+      );
+    case chat_search_contact:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: chat_search_contact),
+        builder: (context) =&gt; ChatSearchContactScreen(),
+      );
+    case chat_search_contact_group:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: chat_search_contact_group),
+        builder: (context) =&gt; ContactListForwardMessageWidget(),
+      );
+    case contact_screen:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: contact_screen),
+        builder: (context) =&gt; ContactScreen(),
+      );
+    case request_add_friend:
+      return MaterialPageRoute(
+          settings: RouteSettings(name: request_add_friend),
+          builder: (context) =&gt; RequestScreen());
+
+    case deals:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: deals),
+        builder: (context) =&gt; TabWidget(),
+      );
+    case favorite:
+      final bool isBack = settings.arguments as bool;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: favorite),
+        builder: (context) =&gt; FavoriteScreen(isBack: isBack),
+      );
+    case events:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: events),
+        builder: (context) =&gt; EventsScreen(),
+      );
+    case events_detail:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: events_detail),
+        builder: (context) =&gt; EventsDetailScreen(),
+      );
+    case policy_register:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: policy_register),
+        builder: (context) =&gt; PolicyRegisterScreen(),
+      );
+    case delegate_register:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: delegate_register),
+        builder: (context) =&gt; DelegateRegisterScreen(),
+      );
+    case delegate_detail:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: delegate_detail),
+        builder: (context) =&gt; DelegateDetailScreen(),
+      );
+    case notification:
+      &#47;&#47;final bool isBack = settings.arguments as bool;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: notification),
+        builder: (context) =&gt; NotificationScreen(
+            &#47;&#47; isBack: isBack,
+            ),
+      );
+    case menu:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: menu),
+        builder: (context) =&gt; MenuScreen(),
+      );
+    case more:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: more),
+        builder: (context) =&gt; MoreScreen(),
+      );
+    case more_media:
+      final mediaParam = settings.arguments;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: more_media),
+        builder: (context) =&gt; MoreMediaScreen(mediaParam: mediaParam),
+      );
+    case review:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: review),
+        builder: (context) =&gt; ReviewScreen(),
+      );
+    case feedback:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: feedback),
+        builder: (context) =&gt; FeedBackScreen(),
+      );
+    case profile:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: profile),
+        builder: (context) =&gt; ProfileScreen(),
+      );
+    case profileDetail:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: profileDetail),
+        builder: (context) =&gt; ProfileDetailScreen(),
+      );
+    case change_password:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: change_password),
+        builder: (context) =&gt; ChangePasswordScreen(),
+      );
+    case block_user:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: block_user),
+        builder: (context) =&gt; BlockUserScreen(),
+      );
+    case influencer:
+      final int influencerID = settings.arguments as int;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: influencer),
+        builder: (context) =&gt; InfluencerScreen(influencerID: influencerID),
+      );
+    case watch_wf:
+      final WatchWFParam param = settings.arguments as WatchWFParam;
+      return MaterialPageRoute(
+        settings: RouteSettings(name: watch_wf),
+        builder: (context) =&gt; WatchWFScreen(param: param),
+      );
+    case search_all:
+      return MaterialPageRoute(
+        settings: RouteSettings(name: search_all),
+        builder: (context) =&gt; SearchScreen(),
+      );
+    default:
+      return MaterialPageRoute(
+        builder: (_) =&gt; Scaffold(
+          body: Center(child: Text(&#39;No route defined for ${settings.name}&#39;)),
+        ),
+      );
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">wmobile</a></li>
+  <li><a href="../../routes/routes-library.html">routes</a></li>
+  <li><a href="../../routes/Routes-class.html">Routes</a></li>
+  <li class="self-crumb">generateRoute method</li>
+</ol>
+
+
+    <h5>Routes class</h5>
+    <ol>
+
+
+
+    <li class="section-title inherited">
+      <a href="../../routes/Routes-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+
+    <li class="section-title inherited"><a href="../../routes/Routes-class.html#instance-methods">Methods</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
+
+    <li class="section-title inherited"><a href="../../routes/Routes-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+        <li class="section-title"><a href="../../routes/Routes-class.html#static-methods">Static methods</a></li>
+          <li><a href="../../routes/Routes/generateRoute.html">generateRoute</a></li>
+
+        <li class="section-title"><a href="../../routes/Routes-class.html#constants">Constants</a></li>
+          <li><a href="../../routes/Routes/block_user-constant.html">block_user</a></li>
+          <li><a href="../../routes/Routes/change_password-constant.html">change_password</a></li>
+          <li><a href="../../routes/Routes/channel-constant.html">channel</a></li>
+          <li><a href="../../routes/Routes/channel_quicklook-constant.html">channel_quicklook</a></li>
+          <li><a href="../../routes/Routes/channelMovie-constant.html">channelMovie</a></li>
+          <li><a href="../../routes/Routes/chat-constant.html">chat</a></li>
+          <li><a href="../../routes/Routes/chat_create-constant.html">chat_create</a></li>
+          <li><a href="../../routes/Routes/chat_create_group-constant.html">chat_create_group</a></li>
+          <li><a href="../../routes/Routes/chat_detail-constant.html">chat_detail</a></li>
+          <li><a href="../../routes/Routes/chat_group_info-constant.html">chat_group_info</a></li>
+          <li><a href="../../routes/Routes/chat_more-constant.html">chat_more</a></li>
+          <li><a href="../../routes/Routes/chat_recent-constant.html">chat_recent</a></li>
+          <li><a href="../../routes/Routes/chat_search_contact-constant.html">chat_search_contact</a></li>
+          <li><a href="../../routes/Routes/chat_search_contact_group-constant.html">chat_search_contact_group</a></li>
+          <li><a href="../../routes/Routes/chat_search_user-constant.html">chat_search_user</a></li>
+          <li><a href="../../routes/Routes/contact_screen-constant.html">contact_screen</a></li>
+          <li><a href="../../routes/Routes/deals-constant.html">deals</a></li>
+          <li><a href="../../routes/Routes/delegate_detail-constant.html">delegate_detail</a></li>
+          <li><a href="../../routes/Routes/delegate_register-constant.html">delegate_register</a></li>
+          <li><a href="../../routes/Routes/events-constant.html">events</a></li>
+          <li><a href="../../routes/Routes/events_detail-constant.html">events_detail</a></li>
+          <li><a href="../../routes/Routes/favorite-constant.html">favorite</a></li>
+          <li><a href="../../routes/Routes/feedback-constant.html">feedback</a></li>
+          <li><a href="../../routes/Routes/home-constant.html">home</a></li>
+          <li><a href="../../routes/Routes/influencer-constant.html">influencer</a></li>
+          <li><a href="../../routes/Routes/media-constant.html">media</a></li>
+          <li><a href="../../routes/Routes/media_movie_detail-constant.html">media_movie_detail</a></li>
+          <li><a href="../../routes/Routes/media_music_add_playlist-constant.html">media_music_add_playlist</a></li>
+          <li><a href="../../routes/Routes/media_music_create_playlist-constant.html">media_music_create_playlist</a></li>
+          <li><a href="../../routes/Routes/media_music_detail-constant.html">media_music_detail</a></li>
+          <li><a href="../../routes/Routes/media_video_detail-constant.html">media_video_detail</a></li>
+          <li><a href="../../routes/Routes/media_video_player-constant.html">media_video_player</a></li>
+          <li><a href="../../routes/Routes/menu-constant.html">menu</a></li>
+          <li><a href="../../routes/Routes/more-constant.html">more</a></li>
+          <li><a href="../../routes/Routes/more_media-constant.html">more_media</a></li>
+          <li><a href="../../routes/Routes/more_music-constant.html">more_music</a></li>
+          <li><a href="../../routes/Routes/music-constant.html">music</a></li>
+          <li><a href="../../routes/Routes/news-constant.html">news</a></li>
+          <li><a href="../../routes/Routes/news_create_category-constant.html">news_create_category</a></li>
+          <li><a href="../../routes/Routes/news_detail-constant.html">news_detail</a></li>
+          <li><a href="../../routes/Routes/news_home-constant.html">news_home</a></li>
+          <li><a href="../../routes/Routes/news_home_all_networks-constant.html">news_home_all_networks</a></li>
+          <li><a href="../../routes/Routes/news_web_view-constant.html">news_web_view</a></li>
+          <li><a href="../../routes/Routes/notification-constant.html">notification</a></li>
+          <li><a href="../../routes/Routes/policy_register-constant.html">policy_register</a></li>
+          <li><a href="../../routes/Routes/profile-constant.html">profile</a></li>
+          <li><a href="../../routes/Routes/profileDetail-constant.html">profileDetail</a></li>
+          <li><a href="../../routes/Routes/register-constant.html">register</a></li>
+          <li><a href="../../routes/Routes/request_add_friend-constant.html">request_add_friend</a></li>
+          <li><a href="../../routes/Routes/review-constant.html">review</a></li>
+          <li><a href="../../routes/Routes/search_all-constant.html">search_all</a></li>
+          <li><a href="../../routes/Routes/watch_wf-constant.html">watch_wf</a></li>
+          <li><a href="../../routes/Routes/welcome-constant.html">welcome</a></li>
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

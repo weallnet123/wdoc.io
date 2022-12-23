@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the RegisterFormFieldWidget class from the register_form_field library, for the Dart programming language.">
+  <title>RegisterFormFieldWidget class - register_form_field library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">wmobile</a></li>
+    <li><a href="../ui_register_register_form_field/ui_register_register_form_field-library.html">register_form_field</a></li>
+    <li class="self-crumb">RegisterFormFieldWidget class</li>
+  </ol>
+  <div class="self-name">RegisterFormFieldWidget</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-class">RegisterFormFieldWidget</span> class 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+ 
+</h1></div>
+
+    
+
+
+    <section>
+      <dl class="dl-horizontal">
+        
+  <dt>Inheritance</dt>
+  <dd>
+    <ul class="gt-separated dark clazz-relationships">
+      <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
+        <li><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree-class.html">DiagnosticableTree</a></li>
+        <li><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></li>
+        <li><a href="https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html">StatefulWidget</a></li>
+        <li><a href="https://api.flutter.dev/flutter/widgets/FormField-class.html">FormField</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></li>
+      <li>RegisterFormFieldWidget</li>
+    </ul>
+  </dd>
+
+        
+        
+
+
+        <dt>Available Extensions</dt>
+        <dd><ul class="comma-separated clazz-relationships">
+          <li><a href="https://pub.dev/documentation/flutter_layout_grid/1.0.6/flutter_layout_grid/GridPlacementExtensions.html">GridPlacementExtensions</a></li>
+        </ul></dd>
+
+        
+      </dl>
+    </section>
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+
+    <dl class="constructor-summary-list">
+        <dt id="RegisterFormFieldWidget" class="callable">
+          <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/RegisterFormFieldWidget.html">RegisterFormFieldWidget</a></span><span class="signature">(<span class="parameter" id="-param-context">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span><span class="parameter" id="-param-errorText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">errorText</span>, </span><span class="parameter" id="-param-isObscure"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isObscure</span> = <span class="default-value">false</span>, </span><span class="parameter" id="-param-inputType"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/services/TextInputType-class.html">TextInputType</a>?</span> <span class="parameter-name">inputType</span>, </span><span class="parameter" id="-param-suffixIcon"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> <span class="parameter-name">suffixIcon</span>, </span><span class="parameter" id="-param-controller"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/TextEditingController-class.html">TextEditingController</a>?</span> <span class="parameter-name">controller</span>, </span><span class="parameter" id="-param-focusNode"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/FocusNode-class.html">FocusNode</a>?</span> <span class="parameter-name">focusNode</span>, </span><span class="parameter" id="-param-onFieldSubmitted"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/ValueChanged.html">ValueChanged</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">onFieldSubmitted</span>, </span><span class="parameter" id="-param-autoFocus"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">autoFocus</span> = <span class="default-value">false</span>, </span><span class="parameter" id="-param-inputAction"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/services/TextInputAction.html">TextInputAction</a>?</span> <span class="parameter-name">inputAction</span>, </span><span class="parameter" id="-param-inputFormatters"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/services/TextInputFormatter-class.html">TextInputFormatter</a></span>&gt;</span>?</span> <span class="parameter-name">inputFormatters</span>, </span><span class="parameter" id="-param-hintText"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">hintText</span>, </span><span class="parameter" id="-param-icon"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/IconData-class.html">IconData</a>?</span> <span class="parameter-name">icon</span>, </span><span class="parameter" id="-param-onFocus"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/gestures/GestureTapCallback.html">GestureTapCallback</a>?</span> <span class="parameter-name">onFocus</span>, </span><span class="parameter" id="-param-onSaved"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/FormFieldSetter.html">FormFieldSetter</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">onSaved</span>, </span><span class="parameter" id="-param-validator"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/FormFieldValidator.html">FormFieldValidator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">validator</span>, </span><span class="parameter" id="-param-initialValue"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">initialValue</span> = <span class="default-value">&#39;&#39;</span>, </span><span class="parameter" id="-param-autovalidateMode"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/AutovalidateMode.html">AutovalidateMode</a>?</span> <span class="parameter-name">autovalidateMode</span>, </span><span class="parameter" id="-param-onChanged"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/ValueChanged.html">ValueChanged</a>?</span> <span class="parameter-name">onChanged</span>}</span>)</span>
+        </dt>
+        <dd>
+          
+        </dd>
+    </dl>
+  </section>
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="autoFocus" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/autoFocus.html">autoFocus</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="autovalidateMode" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/FormField/autovalidateMode.html">autovalidateMode</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/AutovalidateMode.html">AutovalidateMode</a></span> 
+
+</dt>
+<dd class="inherited">
+  Used to enable/disable this form field auto validation and update its
+error text.
+  <div class="features">final, inherited</div>
+
+</dd>
+
+        <dt id="builder" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/FormField/builder.html">builder</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/FormFieldBuilder.html">FormFieldBuilder</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> 
+
+</dt>
+<dd class="inherited">
+  Function that returns the widget representing this form field. It is
+passed the form field state as input, containing the current value and
+validation state of this field.
+  <div class="features">final, inherited</div>
+
+</dd>
+
+        <dt id="context" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/context.html">context</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="controller" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/controller.html">controller</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/TextEditingController-class.html">TextEditingController</a>?</span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="enabled" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/FormField/enabled.html">enabled</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd class="inherited">
+  Whether the form is able to receive user input.
+  <div class="features">final, inherited</div>
+
+</dd>
+
+        <dt id="errorText" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/errorText.html">errorText</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="focusNode" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/focusNode.html">focusNode</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/FocusNode-class.html">FocusNode</a>?</span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features">@<a href="https://pub.dev/documentation/meta/1.7.0/meta/nonVirtual-constant.html">nonVirtual</a>, read-only, inherited</div>
+
+</dd>
+
+        <dt id="hintText" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/hintText.html">hintText</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="icon" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/icon.html">icon</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/IconData-class.html">IconData</a>?</span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="initialValue" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/FormField/initialValue.html">initialValue</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> 
+
+</dt>
+<dd class="inherited">
+  An optional value to initialize the form field to, or null otherwise.
+  <div class="features">final, inherited</div>
+
+</dd>
+
+        <dt id="inputAction" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/inputAction.html">inputAction</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/services/TextInputAction.html">TextInputAction</a>?</span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="inputFormatters" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/inputFormatters.html">inputFormatters</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/services/TextInputFormatter-class.html">TextInputFormatter</a></span>&gt;</span>?</span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="inputType" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/inputType.html">inputType</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/services/TextInputType-class.html">TextInputType</a>?</span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="isObscure" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/isObscure.html">isObscure</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="key" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/key.html">key</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> 
+
+</dt>
+<dd class="inherited">
+  Controls how one widget replaces another widget in the tree.
+  <div class="features">final, inherited</div>
+
+</dd>
+
+        <dt id="onFieldSubmitted" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/onFieldSubmitted.html">onFieldSubmitted</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/foundation/ValueChanged.html">ValueChanged</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="onFocus" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/onFocus.html">onFocus</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/gestures/GestureTapCallback.html">GestureTapCallback</a>?</span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="onSaved" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/FormField/onSaved.html">onSaved</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/FormFieldSetter.html">FormFieldSetter</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> 
+
+</dt>
+<dd class="inherited">
+  An optional method to call with the final value when the form is saved via
+<a href="https://api.flutter.dev/flutter/widgets/FormState/save.html">FormState.save</a>.
+  <div class="features">final, inherited</div>
+
+</dd>
+
+        <dt id="restorationId" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/FormField/restorationId.html">restorationId</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> 
+
+</dt>
+<dd class="inherited">
+  Restoration ID to save and restore the state of the form field.
+  <div class="features">final, inherited</div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span> 
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features">read-only, inherited</div>
+
+</dd>
+
+        <dt id="suffixIcon" class="property">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/suffixIcon.html">suffixIcon</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a>?</span> 
+
+</dt>
+<dd>
+  
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="validator" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/FormField/validator.html">validator</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/FormFieldValidator.html">FormFieldValidator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> 
+
+</dt>
+<dd class="inherited">
+  An optional method that validates an input. Returns an error string to
+display if the input is invalid, or null otherwise.
+  <div class="features">final, inherited</div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="createElement" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/StatefulWidget/createElement.html">createElement</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/widgets/StatefulElement-class.html">StatefulElement</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates a <a href="https://api.flutter.dev/flutter/widgets/StatefulElement-class.html">StatefulElement</a> to manage this widget's location in the tree.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="createState" class="callable">
+  <span class="name"><a href="../ui_register_register_form_field/RegisterFormFieldWidget/createState.html">createState</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; _FormFieldInlineState</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates the mutable state for this widget at a given location in the tree.
+  <div class="features">override</div>
+
+</dd>
+
+        <dt id="debugDescribeChildren" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/debugDescribeChildren.html">debugDescribeChildren</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode-class.html">DiagnosticsNode</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a list of <code>DiagnosticsNode</code> objects describing this node's
+children.
+  <div class="features">@<a href="https://pub.dev/documentation/meta/1.7.0/meta/protected-constant.html">protected</a>, inherited</div>
+
+</dd>
+
+        <dt id="debugFillProperties" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/debugFillProperties.html">debugFillProperties</a></span><span class="signature">(<wbr><span class="parameter" id="debugFillProperties-param-properties"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticPropertiesBuilder-class.html">DiagnosticPropertiesBuilder</a></span> <span class="parameter-name">properties</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Add additional properties associated with the node.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a non-existent method or property is accessed.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="toDiagnosticsNode" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toDiagnosticsNode.html">toDiagnosticsNode</a></span><span class="signature">(<wbr><span class="parameter" id="toDiagnosticsNode-param-name">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="toDiagnosticsNode-param-style"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticsTreeStyle.html">DiagnosticsTreeStyle</a>?</span> <span class="parameter-name">style</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode-class.html">DiagnosticsNode</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a debug representation of the object that is used by debugging
+tools and by <a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode/toStringDeep.html">DiagnosticsNode.toStringDeep</a>.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toString.html">toString</a></span><span class="signature">(<wbr><span class="parameter" id="toString-param-minLevel">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticLevel.html">DiagnosticLevel</a></span> <span class="parameter-name">minLevel</span> = <span class="default-value">DiagnosticLevel.info</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="toStringDeep" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringDeep.html">toStringDeep</a></span><span class="signature">(<wbr><span class="parameter" id="toStringDeep-param-prefixLineOne">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">prefixLineOne</span> = <span class="default-value">&#39;&#39;</span>, </span><span class="parameter" id="toStringDeep-param-prefixOtherLines"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">prefixOtherLines</span>, </span><span class="parameter" id="toStringDeep-param-minLevel"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticLevel.html">DiagnosticLevel</a></span> <span class="parameter-name">minLevel</span> = <span class="default-value">DiagnosticLevel.debug</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a string representation of this node and its descendants.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="toStringShallow" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringShallow.html">toStringShallow</a></span><span class="signature">(<wbr><span class="parameter" id="toStringShallow-param-joiner">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">joiner</span> = <span class="default-value">&#39;, &#39;</span>, </span><span class="parameter" id="toStringShallow-param-minLevel"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticLevel.html">DiagnosticLevel</a></span> <span class="parameter-name">minLevel</span> = <span class="default-value">DiagnosticLevel.debug</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a one-line detailed description of the object.
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="toStringShort" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/toStringShort.html">toStringShort</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A short, textual description of this widget.
+  <div class="features">inherited</div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features">@<a href="https://pub.dev/documentation/meta/1.7.0/meta/nonVirtual-constant.html">nonVirtual</a>, inherited</div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">wmobile</a></li>
+  <li><a href="../ui_register_register_form_field/ui_register_register_form_field-library.html">register_form_field</a></li>
+  <li class="self-crumb">RegisterFormFieldWidget class</li>
+</ol>
+
+
+    <h5>register_form_field library</h5>
+    <ol>
+  <li class="section-title"><a href="../ui_register_register_form_field/ui_register_register_form_field-library.html#classes">Classes</a></li>
+  <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget-class.html">RegisterFormFieldWidget</a></li>
+
+
+
+
+
+
+
+
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <ol>
+
+        <li class="section-title"><a href="../ui_register_register_form_field/RegisterFormFieldWidget-class.html#constructors">Constructors</a></li>
+          <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/RegisterFormFieldWidget.html">RegisterFormFieldWidget</a></li>
+
+
+    <li class="section-title">
+      <a href="../ui_register_register_form_field/RegisterFormFieldWidget-class.html#instance-properties">Properties</a>
+    </li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/autoFocus.html">autoFocus</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/FormField/autovalidateMode.html">autovalidateMode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/FormField/builder.html">builder</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/context.html">context</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/controller.html">controller</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/FormField/enabled.html">enabled</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/errorText.html">errorText</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/focusNode.html">focusNode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/hashCode.html">hashCode</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/hintText.html">hintText</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/icon.html">icon</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/FormField/initialValue.html">initialValue</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/inputAction.html">inputAction</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/inputFormatters.html">inputFormatters</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/inputType.html">inputType</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/isObscure.html">isObscure</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/key.html">key</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/onFieldSubmitted.html">onFieldSubmitted</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/onFocus.html">onFocus</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/FormField/onSaved.html">onSaved</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/FormField/restorationId.html">restorationId</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/suffixIcon.html">suffixIcon</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/FormField/validator.html">validator</a></li>
+
+    <li class="section-title"><a href="../ui_register_register_form_field/RegisterFormFieldWidget-class.html#instance-methods">Methods</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/StatefulWidget/createElement.html">createElement</a></li>
+    <li><a href="../ui_register_register_form_field/RegisterFormFieldWidget/createState.html">createState</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/debugDescribeChildren.html">debugDescribeChildren</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/debugFillProperties.html">debugFillProperties</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toDiagnosticsNode.html">toDiagnosticsNode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toString.html">toString</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringDeep.html">toStringDeep</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringShallow.html">toStringShallow</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/toStringShort.html">toStringShort</a></li>
+
+    <li class="section-title inherited"><a href="../ui_register_register_form_field/RegisterFormFieldWidget-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

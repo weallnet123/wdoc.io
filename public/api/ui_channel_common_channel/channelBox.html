@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the channelBox function from the common_channel library, for the Dart programming language.">
+  <title>channelBox function - common_channel library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">wmobile</a></li>
+    <li><a href="../ui_channel_common_channel/ui_channel_common_channel-library.html">common_channel</a></li>
+    <li class="self-crumb">channelBox function</li>
+  </ol>
+  <div class="self-name">channelBox</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-function">channelBox</span> function 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
+<span class="name ">channelBox</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="channelBox-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span>, </span></li>
+<li><span class="parameter" id="channelBox-param-channelProfile"><span class="type-annotation"><a href="../view_model_channel_profile_channel_profile/ChannelProfile-class.html">ChannelProfile</a></span> <span class="parameter-name">channelProfile</span>, </span></li>
+<li><span class="parameter" id="channelBox-param-favorite"><span class="type-annotation"><a href="../view_model_favorite_favorite/Favorite-class.html">Favorite</a></span> <span class="parameter-name">favorite</span>, </span></li>
+<li><span class="parameter" id="channelBox-param-onToogleSubscribe"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Function-class.html">Function</a></span> <span class="parameter-name">onToogleSubscribe</span></span></li>
+</ol>)
+
+    </section>
+    
+<section class="desc markdown">
+  <p>This widget show channel's avatar and subscribe button in a row</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Widget channelBox(BuildContext context, ChannelProfile channelProfile,
+    Favorite favorite, Function onToogleSubscribe) {
+  return Padding(
+    padding: EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: MediaQuery.of(context).size.width *
+            (30 &#47; Dimens.SCREEN_WIDTH_PIXEL_DESIGNED)),
+    child: Container(
+      width: MediaQuery.of(context).size.width * 1,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          &#47;&#47;&#47;&#47;CHANNEL AVATAR
+          InkWell(
+            splashFactory: NoSplash.splashFactory,
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =&gt; ChannelScreen(
+                            channelCode: channelProfile.code!,
+                          )));
+            },
+            child: Row(
+              children: [
+                ChannelItemWidget(
+                    onTap: ((channelProfile) {
+                      try {
+                        Navigator.pushNamed(context, Routes.channel,
+                            arguments: channelProfile.code!);
+                      } catch (e) {}
+                    }),
+                    onLongPress: (channel) =&gt; {},
+                    channel: channelProfile,
+                    itemWidth: MediaQuery.of(context).size.height *
+                        (55 &#47; Dimens.SCREEN_HEIGHT_PIXEL_DESIGNED),
+                    itemHeight: MediaQuery.of(context).size.height *
+                        (55 &#47; Dimens.SCREEN_HEIGHT_PIXEL_DESIGNED)),
+                Padding(
+                    padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.05)),
+                Container(
+                  width: MediaQuery.of(context).size.width *
+                      (160 &#47; Dimens.SCREEN_WIDTH_PIXEL_DESIGNED),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        &#47;&#47; width:
+                        &#47;&#47;     MediaQuery.of(context).size.width * 0.4,
+                        child: Text(
+                          channelProfile.name ?? &#39;&#39;,
+                          &#47;&#47; overflow: TextOverflow.ellipsis,
+                          style: bodySemibold,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      Text(
+                          channelProfile.totalSubscription.toString() +
+                              &#39; &#39; +
+                              AppLocalizations.of(context)
+                                  .translate(&#39;button_subscribe&#39;),
+                          overflow: TextOverflow.ellipsis,
+                          style: captionRegular),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          &#47;&#47;SUBSCRIBE CHANNEL BUTTON
+          if (favorite.isFavorited == true)
+            SizedBox(
+              width: MediaQuery.of(context).size.width *
+                  (87 &#47; Dimens.SCREEN_WIDTH_PIXEL_DESIGNED),
+              child: OutlinedButton(
+                  style: ButtonStyle(
+                      &#47;&#47; fixedSize: MaterialStateProperty.all&lt;Size&gt;( Size(MediaQuery.of(context).size.width* 0.2, MediaQuery.of(context).size.width* 0.05) ),
+                      backgroundColor: MaterialStateProperty.all&lt;Color&gt;(
+                          AppColors.primary[70]!)),
+                  onPressed: () {
+                    onToogleSubscribe();
+                  },
+                  child: FittedBox(
+                    child: Text(
+                        AppLocalizations.of(context)
+                            .translate(&#39;bottom_sheet_lable_un_subscribe&#39;),
+                        style: TextStyle(color: AppColors.grayscale[1])),
+                  )),
+            )
+          else
+            SizedBox(
+              width: MediaQuery.of(context).size.width *
+                  (87 &#47; Dimens.SCREEN_WIDTH_PIXEL_DESIGNED),
+              child: OutlinedButton(
+                  style: ButtonStyle(
+                      &#47;&#47; fixedSize: MaterialStateProperty.all&lt;Size&gt;( Size(MediaQuery.of(context).size.width* 0.2, MediaQuery.of(context).size.width* 0.05) ),
+                      backgroundColor: MaterialStateProperty.all&lt;Color&gt;(
+                          AppColors.primary[70]!)),
+                  onPressed: () {
+                    onToogleSubscribe();
+                  },
+                  child: FittedBox(
+                    child: Text(
+                        AppLocalizations.of(context)
+                            .translate(&#39;bottom_sheet_lable_subscribe&#39;),
+                        style: TextStyle(color: AppColors.grayscale[1])),
+                  )),
+            )
+        ],
+      ),
+    ),
+  );
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">wmobile</a></li>
+  <li><a href="../ui_channel_common_channel/ui_channel_common_channel-library.html">common_channel</a></li>
+  <li class="self-crumb">channelBox function</li>
+</ol>
+
+
+    <h5>common_channel library</h5>
+    <ol>
+
+
+
+
+
+  <li class="section-title"><a href="../ui_channel_common_channel/ui_channel_common_channel-library.html#functions">Functions</a></li>
+  <li><a href="../ui_channel_common_channel/channelBox.html">channelBox</a></li>
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

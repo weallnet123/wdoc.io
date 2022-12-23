@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the login function from the auth_utils library, for the Dart programming language.">
+  <title>login function - auth_utils library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">wmobile</a></li>
+    <li><a href="../utils_auth_auth_utils/utils_auth_auth_utils-library.html">auth_utils</a></li>
+    <li class="self-crumb">login function</li>
+  </ol>
+  <div class="self-name">login</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-function">login</span> function 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+<span class="name ">login</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="login-param-context"><span class="type-annotation">dynamic</span> <span class="parameter-name">context</span></span></li>
+</ol>)
+
+    </section>
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; login(context) async {
+  AppStore _appStore = Provider.of&lt;AppStore&gt;(context, listen: false);
+  SharedPreferenceHelper _sharedHelper =
+      Provider.of&lt;SharedPreferenceHelper&gt;(context);
+
+  _appStore.mediaStore.setIsVideoPlaying(false);
+  AuthorizeService _authorizeService = AuthorizeService();
+  &#47;&#47;authen from authen provider
+  await _authorizeService.signInWithinExchangeCode();
+
+  &#47;&#47;save to local storage
+  await _sharedHelper.saveAuthData(
+    jsonEncode(_authorizeService.customAuthData?.toJson()),
+  );
+  &#47;&#47;try to get login user info from authen provider by authData
+  await _authorizeService.getIdentityUserInfo();
+  if (_authorizeService.userInfo != null) {
+    &#47;&#47;already has login account
+    String loginAccountId = _authorizeService.userInfo!.sub ?? &#39;&#39;;
+    &#47;&#47;save to shared helper
+    await _sharedHelper.saveLoginAccountId(loginAccountId);
+    _appStore.accountStore!.setUserLoginID(loginAccountId);
+    await _appStore.accountStore!
+        .initData(); &#47;&#47;get user profile &#47;&#47; &#47;api&#47;WAPM_UserProfile&#47;SaveParam
+
+    if (!_appStore.accountStore!.userProfileVM.apiStatusStore.isError) {
+      if (_appStore.account.userProfileID != null) {
+        FirebaseCrashlytics.instance
+            .setUserIdentifier(_appStore.account.userId!);
+        await FirebaseMessaging.instance
+            .subscribeToTopic(_appStore.account.userId!);
+        await FirebaseMessaging.instance
+            .subscribeToTopic(&#39;server_notification&#39;);
+        await _onTrackUserStatus(context);
+        OverlayService().addNotificationMessageOffline(
+          context,
+          OfflineMessageWidget(),
+        );
+
+        Navigator.of(context).pushNamedAndRemoveUntil(
+          Routes.media,
+          ModalRoute.withName(Routes.media),
+        );
+        &#47;&#47; return true;
+      } else {
+        &#47;&#47; show error login
+        _buildNotFoundAccountDialog(context);
+        &#47;&#47; return false;
+      }
+    }
+  } else {
+    &#47;&#47; show error login
+    _buildNotFoundAccountDialog(context);
+    &#47;&#47; return false;
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">wmobile</a></li>
+  <li><a href="../utils_auth_auth_utils/utils_auth_auth_utils-library.html">auth_utils</a></li>
+  <li class="self-crumb">login function</li>
+</ol>
+
+
+    <h5>auth_utils library</h5>
+    <ol>
+
+
+
+
+
+  <li class="section-title"><a href="../utils_auth_auth_utils/utils_auth_auth_utils-library.html#functions">Functions</a></li>
+  <li><a href="../utils_auth_auth_utils/cleanAfterAuthoraztionActions.html">cleanAfterAuthoraztionActions</a></li>
+  <li><a href="../utils_auth_auth_utils/getSignedUserProfile.html">getSignedUserProfile</a></li>
+  <li><a href="../utils_auth_auth_utils/isLogin.html">isLogin</a></li>
+  <li><a href="../utils_auth_auth_utils/login.html">login</a></li>
+  <li><a href="../utils_auth_auth_utils/requireLogin.html">requireLogin</a></li>
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

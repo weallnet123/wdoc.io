@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the ChatBoxMessage.clone constructor from Class ChatBoxMessage from the chat_box_message library, for the Dart programming language.">
+  <title>ChatBoxMessage.clone constructor - ChatBoxMessage - chat_box_message library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">wmobile</a></li>
+    <li><a href="../../view_model_chat_box_message_chat_box_message/view_model_chat_box_message_chat_box_message-library.html">chat_box_message</a></li>
+    <li><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage-class.html">ChatBoxMessage</a></li>
+    <li class="self-crumb">ChatBoxMessage.clone factory constructor</li>
+  </ol>
+  <div class="self-name">ChatBoxMessage.clone</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-constructor">ChatBoxMessage.clone</span> constructor 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      <span class="name ">ChatBoxMessage.clone</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="clone-param-chatBoxMessage"><span class="type-annotation"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage-class.html">ChatBoxMessage</a></span> <span class="parameter-name">chatBoxMessage</span></span></li>
+</ol>)
+    </section>
+
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">factory ChatBoxMessage.clone(ChatBoxMessage chatBoxMessage) {
+  final String jsonString = json.encode(chatBoxMessage);
+  final jsonResponse = json.decode(jsonString);
+  return ChatBoxMessage.fromJson(jsonResponse);
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">wmobile</a></li>
+  <li><a href="../../view_model_chat_box_message_chat_box_message/view_model_chat_box_message_chat_box_message-library.html">chat_box_message</a></li>
+  <li><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage-class.html">ChatBoxMessage</a></li>
+  <li class="self-crumb">ChatBoxMessage.clone factory constructor</li>
+</ol>
+
+
+    <h5>ChatBoxMessage class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage-class.html#constructors">Constructors</a></li>
+          <li><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/ChatBoxMessage.html">ChatBoxMessage</a></li>
+          <li><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/ChatBoxMessage.clone.html">clone</a></li>
+          <li><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/ChatBoxMessage.fromJson.html">fromJson</a></li>
+
+
+    <li class="section-title inherited">
+      <a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/actionType.html">actionType</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/chatBoxCode.html">chatBoxCode</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/chatBoxID.html">chatBoxID</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/chatBoxMessageGUID.html">chatBoxMessageGUID</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/chatBoxMessageID.html">chatBoxMessageID</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/chatBoxName.html">chatBoxName</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/chatUserReplyID.html">chatUserReplyID</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/chatUserReplyName.html">chatUserReplyName</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/chatUserSenderID.html">chatUserSenderID</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/chatUserSenderName.html">chatUserSenderName</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/content.html">content</a></li>
+    <li class="inherited"><a href="https://pub.dev/documentation/mobx/2.0.7/mobx/Store/context.html">context</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/editMode.html">editMode</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/guid.html">guid</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/isSelected.html">isSelected</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/messageType.html">messageType</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/postedDate.html">postedDate</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/postedDateM.html">postedDateM</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/replyContent.html">replyContent</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/replyContentType.html">replyContentType</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/replyFullName.html">replyFullName</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/roomAvatar.html">roomAvatar</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/senderFullName.html">senderFullName</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/senderID.html">senderID</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/senderImageUrl.html">senderImageUrl</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/status.html">status</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/tagUsers.html">tagUsers</a></li>
+
+    <li class="section-title"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage-class.html#instance-methods">Methods</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setAction.html">setAction</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setChatBoxCode.html">setChatBoxCode</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setChatBoxID.html">setChatBoxID</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setChatBoxMessageGUID.html">setChatBoxMessageGUID</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setChatBoxMessageID.html">setChatBoxMessageID</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setChatBoxName.html">setChatBoxName</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setChatUserReplyID.html">setChatUserReplyID</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setChatUserReplyName.html">setChatUserReplyName</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setChatUserSenderID.html">setChatUserSenderID</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setChatUserSenderName.html">setChatUserSenderName</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setContent.html">setContent</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setEditMode.html">setEditMode</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setGuid.html">setGuid</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setIsSelected.html">setIsSelected</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setMessageType.html">setMessageType</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setPostedDate.html">setPostedDate</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setPostedDateM.html">setPostedDateM</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setReplyContent.html">setReplyContent</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setReplyContentType.html">setReplyContentType</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setReplyFullName.html">setReplyFullName</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setRoomAvatar.html">setRoomAvatar</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setSenderFullName.html">setSenderFullName</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setSenderID.html">setSenderID</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setSenderImageUrl.html">setSenderImageUrl</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setStatus.html">setStatus</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/setTagUsers.html">setTagUsers</a></li>
+    <li><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/toJson.html">toJson</a></li>
+    <li class="inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage/toString.html">toString</a></li>
+
+    <li class="section-title inherited"><a href="../../view_model_chat_box_message_chat_box_message/ChatBoxMessage-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
