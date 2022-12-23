@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the saveList method from the LanguagesViewModel class, for the Dart programming language.">
+  <title>saveList method - LanguagesViewModel class - language_sviewmodel library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">wmobile</a></li>
+    <li><a href="../../view_model_language_language_sviewmodel/view_model_language_language_sviewmodel-library.html">language_sviewmodel</a></li>
+    <li><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel-class.html">LanguagesViewModel</a></li>
+    <li class="self-crumb">saveList method</li>
+  </ol>
+  <div class="self-name">saveList</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-method">saveList</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a></span>
+<span class="name ">saveList</span>(<wbr>)
+
+      <div class="features">inherited</div>
+
+    </section>
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Future saveList() async {
+  apiStatusStore = ApiStatusStore();
+  processing.setProcessing(&#39;Languages&#39;, true, &#39;&#39;);
+  apiStatusStore.setApiLoading(processing.arrProcessing[&#39;Languages&#39;]);
+  try {
+    String searchUrl = getUrls[&#39;saveList&#39;].toString();
+    List&lt;Language&gt; listPostData = [];
+    listPostData.addAll(arrLanguage);
+    final postData =
+        listPostData.map((item) =&gt; convertLanguageToObject(item)).toList();
+    final res = await _dioClient.post(searchUrl, data: jsonEncode(postData));
+    if (res[&#39;result&#39;] == &#39;Success&#39;) {
+      arrLanguage.clear();
+      List&lt;dynamic&gt; jsonData = res[&#39;languages&#39;];
+      List&lt;Language&gt; listData = jsonData
+          .where((item) =&gt; item[&#39;editMode&#39;] != EditMode.DELETE)
+          .map((item) =&gt; convertDataToLanguage(item))
+          .toList();
+      arrLanguage.addAll(listData);
+      apiStatusStore.setApiSuccess();
+    } else {
+      apiStatusStore.setApiUnsuccess(
+        res[&#39;errorMessage&#39;].toString(),
+        res[&#39;errorMessage&#39;].toString(),
+      );
+      Catcher.reportCheckedError(
+          res[&#39;errorMessage&#39;].toString(), StackTrace.empty);
+    }
+  } catch (error, stackTrace) {
+    NetworkExceptionText errorMessage =
+        NetworkException.getDioException(error);
+    apiStatusStore.setApiError(
+      errorMessage.errorMessageVI,
+      errorMessage.errorMessageUS,
+    );
+    Catcher.reportCheckedError(error, stackTrace);
+  }
+  processing.setProcessing(&#39;Languages&#39;, false, &#39;&#39;);
+  apiStatusStore.setApiLoading(processing.arrProcessing[&#39;Languages&#39;]);
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">wmobile</a></li>
+  <li><a href="../../view_model_language_language_sviewmodel/view_model_language_language_sviewmodel-library.html">language_sviewmodel</a></li>
+  <li><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel-class.html">LanguagesViewModel</a></li>
+  <li class="self-crumb">saveList method</li>
+</ol>
+
+
+    <h5>LanguagesViewModel class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel-class.html#constructors">Constructors</a></li>
+          <li><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/LanguagesViewModel.html">LanguagesViewModel</a></li>
+
+
+    <li class="section-title inherited">
+      <a href="../../view_model_language_language_sviewmodel/LanguagesViewModel-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/apiStatusStore.html">apiStatusStore</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/arrLanguage.html">arrLanguage</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/arrSearchParam.html">arrSearchParam</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/arrSLanguage.html">arrSLanguage</a></li>
+    <li class="inherited"><a href="https://pub.dev/documentation/mobx/2.0.7/mobx/Store/context.html">context</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/getUrls.html">getUrls</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/processing.html">processing</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/sortField.html">sortField</a></li>
+
+    <li class="section-title inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel-class.html#instance-methods">Methods</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/convertDataToLanguage.html">convertDataToLanguage</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/convertLanguageToObject.html">convertLanguageToObject</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/create.html">create</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/delete.html">delete</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/getSearchParam.html">getSearchParam</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/initData.html">initData</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/initLocalData.html">initLocalData</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/initModel.html">initModel</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/saveList.html">saveList</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/searchLanguages.html">searchLanguages</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/setSearchParam.html">setSearchParam</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/setSortParam.html">setSortParam</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/toString.html">toString</a></li>
+    <li class="inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel/update.html">update</a></li>
+
+    <li class="section-title inherited"><a href="../../view_model_language_language_sviewmodel/LanguagesViewModel-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the build method from the ProfileWidget class, for the Dart programming language.">
+  <title>build method - ProfileWidget class - profile library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">wmobile</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ui_media_video_detail_profile-library.html">profile</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ProfileWidget-class.html">ProfileWidget</a></li>
+    <li class="self-crumb">build method</li>
+  </ol>
+  <div class="self-name">build</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-method">build</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+<div>
+  <ol class="annotation-list">
+    <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+  </ol>
+</div>
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
+<span class="name ">build</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+</ol>)
+
+      <div class="features">override</div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Describes the part of the user interface represented by this widget.</p>
+<p>The framework calls this method when this widget is inserted into the tree
+in a given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> and when the dependencies of this widget change
+(e.g., an <a href="https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html">InheritedWidget</a> referenced by this widget changes). This
+method can potentially be called in every frame and should not have any side
+effects beyond building a widget.</p>
+<p>The framework replaces the subtree below this widget with the widget
+returned by this method, either by updating the existing subtree or by
+removing the subtree and inflating a new subtree, depending on whether the
+widget returned by this method can update the root of the existing
+subtree, as determined by calling <a href="https://api.flutter.dev/flutter/widgets/Widget/canUpdate.html">Widget.canUpdate</a>.</p>
+<p>Typically implementations return a newly created constellation of widgets
+that are configured with information from this widget's constructor and
+from the given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a>.</p>
+<p>The given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> contains information about the location in the
+tree at which this widget is being built. For example, the context
+provides the set of inherited widgets for this location in the tree. A
+given widget might be built with multiple different <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a>
+arguments over time if the widget is moved around the tree or if the
+widget is inserted into the tree in multiple places at once.</p>
+<p>The implementation of this method must only depend on:</p>
+<ul>
+<li>the fields of the widget, which themselves must not change over time,
+and</li>
+<li>any ambient state obtained from the <code>context</code> using
+<a href="https://api.flutter.dev/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html">BuildContext.dependOnInheritedWidgetOfExactType</a>.</li>
+</ul>
+<p>If a widget's <a href="../../ui_media_video_detail_profile/ProfileWidget/build.html">build</a> method is to depend on anything else, use a
+<a href="https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html">StatefulWidget</a> instead.</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html">StatelessWidget</a>, which contains the discussion on performance considerations.</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+Widget build(BuildContext context) {
+  return SliverList(
+    delegate: SliverChildListDelegate([
+      Observer(
+        builder: (_) =&gt; Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 6.0),
+                child: VideoItemWidget(
+                  video: video,
+                  onTap: (video) {},
+                  onLongPress: (video) {},
+                  onPlay: (video) =&gt; onPlay(video),
+                  itemWidth: MediaQuery.of(context).size.width *
+                      (124 &#47; Dimens.SCREEN_WIDTH_PIXEL_DESIGNED),
+                  itemHeight: MediaQuery.of(context).size.height *
+                      (202 &#47; Dimens.SCREEN_HEIGHT_PIXEL_DESIGNED),
+                  onFavorite: (video) =&gt; onFavorite(video),
+                  isCurrentVideoPlayer: isCurrentVideoPlayer,
+                  type: buildVideoType.CLIPRRECT,
+                ),
+              ),
+              SizedBox(width: 16.0),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    &#47;&#47;Add video label with red background on the first then video title next
+                    Text.rich(
+                      TextSpan(children: [
+                        if (video.label != null &amp;&amp;
+                            video.label!.toUpperCase() != &#39;NORMAL&#39;) ...[
+                          WidgetSpan(
+                            child: Container(
+                              color: AppColors.semantic_Red[2],
+                              padding: EdgeInsets.fromLTRB(12, 3, 12, 3),
+                              child: Text(video.label!.toUpperCase(),
+                                  style:
+                                      CustomTextStyle.caption_Regular(context)
+                                          .copyWith(
+                                              color: AppColors.grayscale[1])),
+                            ),
+                          ),
+                          if (video.label != null) TextSpan(text: &#39;  &#39;),
+                        ],
+                        TextSpan(
+                            text: video.title ?? &#39;&#39;,
+                            style: headline5.copyWith(
+                                color: AppColors.secondary[70])),
+                      ]),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
+                      child: Row(
+                        children: [
+                          _ItemInteractions(
+                            iconData: FeatherIcons.eye,
+                            color: AppColors.secondary[80]!,
+                            data: video.totalView == null &amp;&amp;
+                                    video.totalView! &lt; 0
+                                ? &#39;0&#39;
+                                : &#39;${totalConverter(video.totalView!)}&#39;,
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(
+                                left: MediaQuery.of(context).size.width *
+                                    (17 &#47;
+                                        Dimens.SCREEN_WIDTH_PIXEL_DESIGNED)),
+                          ),
+                          _ItemInteractions(
+                            iconData:
+                                video.isFavorite != null &amp;&amp; video.isFavorite!
+                                    ? Icons.favorite
+                                    : FeatherIcons.heart,
+                            color:
+                                video.isFavorite != null &amp;&amp; video.isFavorite!
+                                    ? AppColors.semantic_Red[02]!
+                                    : AppColors.secondary[80]!,
+                            data: video.totalFavorite == null &amp;&amp;
+                                    video.totalFavorite! &lt; 0
+                                ? &#39;0&#39;
+                                : &#39;${totalConverter(video.totalFavorite!)}&#39;,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        _ItemIconButtonAction(
+                          iconData: FeatherIcons.send,
+                          onTap: (video) =&gt; onShareWF(video),
+                          video: video,
+                        ),
+                        SizedBox(width: 12),
+                        _ItemIconButtonAction(
+                          iconData: FeatherIcons.share2,
+                          onTap: (video) =&gt; onShare(video),
+                          video: video,
+                        ),
+                        SizedBox(width: 12),
+                        if (isGuest) ...[
+                          _ItemIconButtonAction(
+                            iconData: FeatherIcons.heart,
+                            onTap: (video) =&gt; onFavorite(video),
+                            video: video,
+                          ),
+                        ] else ...[
+                          FavoriteVideoButton(
+                              onFavorite: onFavorite, video: video),
+                        ],
+                        SizedBox(width: 12),
+                        _ItemIconButtonAction(
+                          iconData: FeatherIcons.tag,
+                          onTap: (video) =&gt; onTagFriend(video),
+                          video: video,
+                        ),
+                        SizedBox(width: 12),
+                        _ItemIconButtonAction(
+                          iconData: Icons.more_vert,
+                          onTap: (video) =&gt; onMore(video),
+                          video: video,
+                        ),
+                        SizedBox(width: 12),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      &#47;&#47;padding between Watch with Friends and the remaining top
+      Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: MediaQuery.of(context).size.width *
+                (27 &#47; Dimens.SCREEN_WIDTH_PIXEL_DESIGNED)),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: () =&gt; onWatchWF(video),
+          child: Container(
+            alignment: Alignment.center,
+            height: MediaQuery.of(context).size.height * 0.05,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                border:
+                    Border.all(width: 3, color: AppColors.secondary[80]!)),
+            child: FittedBox(
+              fit: BoxFit.fitHeight,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      FeatherIcons.users,
+                      color: AppColors.secondary[80]!,
+                      size: 16,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width * 0.03),
+                    ),
+                    Text(
+                      AppLocalizations.of(context)
+                          .translate(&#39;media_btn_watch_wf&#39;),
+                      style: CustomTextStyle.button_Small(context).copyWith(
+                        color: AppColors.secondary[80]!,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      if (video.description != null) ...[
+        Container(
+            padding: EdgeInsets.only(bottom: 20.0),
+            child: SecondReadMoreText(
+              text: video.description!,
+            )),
+      ],
+    ]),
+  );
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">wmobile</a></li>
+  <li><a href="../../ui_media_video_detail_profile/ui_media_video_detail_profile-library.html">profile</a></li>
+  <li><a href="../../ui_media_video_detail_profile/ProfileWidget-class.html">ProfileWidget</a></li>
+  <li class="self-crumb">build method</li>
+</ol>
+
+
+    <h5>ProfileWidget class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../ui_media_video_detail_profile/ProfileWidget-class.html#constructors">Constructors</a></li>
+          <li><a href="../../ui_media_video_detail_profile/ProfileWidget/ProfileWidget.html">ProfileWidget</a></li>
+
+
+    <li class="section-title">
+      <a href="../../ui_media_video_detail_profile/ProfileWidget-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/hashCode.html">hashCode</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ProfileWidget/isCurrentVideoPlayer.html">isCurrentVideoPlayer</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ProfileWidget/isGuest.html">isGuest</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/key.html">key</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ProfileWidget/onFavorite.html">onFavorite</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ProfileWidget/onMore.html">onMore</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ProfileWidget/onPlay.html">onPlay</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ProfileWidget/onShare.html">onShare</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ProfileWidget/onShareWF.html">onShareWF</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ProfileWidget/onTagFriend.html">onTagFriend</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ProfileWidget/onWatchWF.html">onWatchWF</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ProfileWidget/video.html">video</a></li>
+
+    <li class="section-title"><a href="../../ui_media_video_detail_profile/ProfileWidget-class.html#instance-methods">Methods</a></li>
+    <li><a href="../../ui_media_video_detail_profile/ProfileWidget/build.html">build</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/StatelessWidget/createElement.html">createElement</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/debugDescribeChildren.html">debugDescribeChildren</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/debugFillProperties.html">debugFillProperties</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toDiagnosticsNode.html">toDiagnosticsNode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toString.html">toString</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringDeep.html">toStringDeep</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringShallow.html">toStringShallow</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/toStringShort.html">toStringShort</a></li>
+
+    <li class="section-title inherited"><a href="../../ui_media_video_detail_profile/ProfileWidget-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the saveFavorite method from the FavoriteViewModel class, for the Dart programming language.">
+  <title>saveFavorite method - FavoriteViewModel class - favorite_viewmodel library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">wmobile</a></li>
+    <li><a href="../../view_model_favorite_favorite_viewmodel/view_model_favorite_favorite_viewmodel-library.html">favorite_viewmodel</a></li>
+    <li><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel-class.html">FavoriteViewModel</a></li>
+    <li class="self-crumb">saveFavorite method</li>
+  </ol>
+  <div class="self-name">saveFavorite</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-method">saveFavorite</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a></span>
+<span class="name ">saveFavorite</span>(<wbr>)
+
+      <div class="features">inherited</div>
+
+    </section>
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Future saveFavorite() async {
+  apiStatusStore = ApiStatusStore();
+  processing.setProcessing(&#39;Favorite&#39;, true, &#39;&#39;);
+  apiStatusStore.setApiLoading(processing.arrProcessing[&#39;Favorite&#39;]);
+  try {
+    String saveUrl = getUrls[&#39;saveFavorite&#39;].toString();
+    var res = await _dioClient.post(saveUrl,
+        data: jsonEncode(convertFavoriteToObject(favorite)));
+    if (res[&#39;result&#39;] == &#39;Success&#39;) {
+      favorite = convertDataToFavorite(res[&#39;favorite&#39;]);
+      favoriteID = favorite.favoriteID;
+      apiStatusStore.setApiSuccess();
+    } else {
+      apiStatusStore.setApiUnsuccess(
+        res[&#39;errorMessage&#39;].toString(),
+        res[&#39;errorMessage&#39;].toString(),
+      );
+      Catcher.reportCheckedError(
+          res[&#39;errorMessage&#39;].toString(), StackTrace.empty);
+    }
+  } catch (error, stackTrace) {
+    NetworkExceptionText errorMessage =
+        NetworkException.getDioException(error);
+    apiStatusStore.setApiError(
+      errorMessage.errorMessageVI,
+      errorMessage.errorMessageUS,
+    );
+    Catcher.reportCheckedError(error, stackTrace);
+  }
+  processing.setProcessing(&#39;Favorite&#39;, false, &#39;&#39;);
+  apiStatusStore.setApiLoading(processing.arrProcessing[&#39;Favorite&#39;]);
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">wmobile</a></li>
+  <li><a href="../../view_model_favorite_favorite_viewmodel/view_model_favorite_favorite_viewmodel-library.html">favorite_viewmodel</a></li>
+  <li><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel-class.html">FavoriteViewModel</a></li>
+  <li class="self-crumb">saveFavorite method</li>
+</ol>
+
+
+    <h5>FavoriteViewModel class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel-class.html#constructors">Constructors</a></li>
+          <li><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/FavoriteViewModel.html">FavoriteViewModel</a></li>
+
+
+    <li class="section-title inherited">
+      <a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/apiStatusStore.html">apiStatusStore</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/arrSearchParam.html">arrSearchParam</a></li>
+    <li class="inherited"><a href="https://pub.dev/documentation/mobx/2.0.7/mobx/Store/context.html">context</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/favorite.html">favorite</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/favoriteCommon.html">favoriteCommon</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/favoriteID.html">favoriteID</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/getUrls.html">getUrls</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/processing.html">processing</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+
+    <li class="section-title inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel-class.html#instance-methods">Methods</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/convertDataToFavorite.html">convertDataToFavorite</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/convertFavoriteRequestToObject.html">convertFavoriteRequestToObject</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/convertFavoriteToObject.html">convertFavoriteToObject</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/deleteFavorite.html">deleteFavorite</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/getDetaiFavorite.html">getDetaiFavorite</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/getSearchParam.html">getSearchParam</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/initData.html">initData</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/initFavorite.html">initFavorite</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/initLocalData.html">initLocalData</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/initModel.html">initModel</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/saveFavorite.html">saveFavorite</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/saveShare.html">saveShare</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/setFavoriteID.html">setFavoriteID</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/setSearchParam.html">setSearchParam</a></li>
+    <li class="inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel/toString.html">toString</a></li>
+
+    <li class="section-title inherited"><a href="../../view_model_favorite_favorite_viewmodel/FavoriteViewModel-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

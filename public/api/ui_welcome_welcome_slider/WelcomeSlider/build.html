@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the build method from the WelcomeSlider class, for the Dart programming language.">
+  <title>build method - WelcomeSlider class - welcome_slider library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">wmobile</a></li>
+    <li><a href="../../ui_welcome_welcome_slider/ui_welcome_welcome_slider-library.html">welcome_slider</a></li>
+    <li><a href="../../ui_welcome_welcome_slider/WelcomeSlider-class.html">WelcomeSlider</a></li>
+    <li class="self-crumb">build method</li>
+  </ol>
+  <div class="self-name">build</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-method">build</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+<div>
+  <ol class="annotation-list">
+    <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+  </ol>
+</div>
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
+<span class="name ">build</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+</ol>)
+
+      <div class="features">override</div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Describes the part of the user interface represented by this widget.</p>
+<p>The framework calls this method when this widget is inserted into the tree
+in a given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> and when the dependencies of this widget change
+(e.g., an <a href="https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html">InheritedWidget</a> referenced by this widget changes). This
+method can potentially be called in every frame and should not have any side
+effects beyond building a widget.</p>
+<p>The framework replaces the subtree below this widget with the widget
+returned by this method, either by updating the existing subtree or by
+removing the subtree and inflating a new subtree, depending on whether the
+widget returned by this method can update the root of the existing
+subtree, as determined by calling <a href="https://api.flutter.dev/flutter/widgets/Widget/canUpdate.html">Widget.canUpdate</a>.</p>
+<p>Typically implementations return a newly created constellation of widgets
+that are configured with information from this widget's constructor and
+from the given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a>.</p>
+<p>The given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> contains information about the location in the
+tree at which this widget is being built. For example, the context
+provides the set of inherited widgets for this location in the tree. A
+given widget might be built with multiple different <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a>
+arguments over time if the widget is moved around the tree or if the
+widget is inserted into the tree in multiple places at once.</p>
+<p>The implementation of this method must only depend on:</p>
+<ul>
+<li>the fields of the widget, which themselves must not change over time,
+and</li>
+<li>any ambient state obtained from the <code>context</code> using
+<a href="https://api.flutter.dev/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html">BuildContext.dependOnInheritedWidgetOfExactType</a>.</li>
+</ul>
+<p>If a widget's <a href="../../ui_welcome_welcome_slider/WelcomeSlider/build.html">build</a> method is to depend on anything else, use a
+<a href="https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html">StatefulWidget</a> instead.</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html">StatelessWidget</a>, which contains the discussion on performance considerations.</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+Widget build(BuildContext context) {
+  final SliderDimension dimension =
+      SliderDimension.getDimension(MediaQuery.of(context).size.height);
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    mainAxisSize: MainAxisSize.min,
+    children: &lt;Widget&gt;[
+      CarouselSlider(
+        options: CarouselOptions(
+          height: dimension.heightSlider,
+          viewportFraction: 1,
+          initialPage: 0,
+          enableInfiniteScroll: true,
+          reverse: false,
+          autoPlay: false,
+          enlargeCenterPage: true,
+          scrollDirection: Axis.horizontal,
+          onPageChanged: onPageChanged,
+        ),
+        items: sliders.map((item) {
+          if (item.id == 0) {
+            return Column(
+              children: [
+                Container(
+                  height: 120.0,
+                  width: 120.0,
+                  child: Image.asset(
+                    item.icon!,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.fromLTRB(30.0, 16.0, 30.0, 16.0),
+                    child: RichText(
+                      text: TextSpan(children: [
+                        TextSpan(
+                          text:
+                              &#39;${AppLocalizations.of(context).translate(&#39;welcome_label_simplify&#39;)}\n&#39;,
+                          style: TextStyle(
+                            fontSize: dimension.textApp,
+                            color: Theme.of(context).colorScheme.onBackground,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        TextSpan(
+                          text:
+                              &#39;${AppLocalizations.of(context).translate(&#39;welcome_label_your_digital&#39;)}\t&#39;,
+                          style: TextStyle(
+                            fontSize: 30,
+                            color:
+                                Theme.of(context).textTheme.bodyText1!.color,
+                          ),
+                        ),
+                        TextSpan(
+                          text:
+                              &#39;${AppLocalizations.of(context).translate(&#39;welcome_label_life&#39;)}&#39;,
+                          style: TextStyle(
+                            fontSize: dimension.textApp,
+                            color: Theme.of(context).colorScheme.onBackground,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ]),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(30.0, 0.0, 25.0, 0.0),
+                    child: Text(
+                      locale == Languages.langEN
+                          ? item.subtitleUS
+                          : item.subtitleVI,
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        fontSize: dimension.title,
+                        color: Theme.of(context).textTheme.caption!.color,
+                        wordSpacing: 1.0,
+                        &#47;&#47;letterSpacing: 1.0,
+                        height: 1.7,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            );
+          }
+          return Column(
+            children: &lt;Widget&gt;[
+              SizedBox(
+                width: dimension.icon,
+                height: dimension.icon,
+                child: Image.asset(
+                  item.icon!,
+                  fit: BoxFit.fill,
+                  color: Theme.of(context).colorScheme.onBackground,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 16.0),
+                child: Text(
+                  (locale == Languages.langEN ? item.titleUS : item.titleVI)!
+                      .toUpperCase(),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: dimension.title,
+                    &#47;&#47;fontWeight: FontWeight.w500,
+                    color: Theme.of(context).textTheme.headline6!.color,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(25.0, 0.0, 25.0, 0.0),
+                child: Text(
+                  locale == Languages.langEN
+                      ? item.subtitleUS
+                      : item.subtitleVI,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: dimension.subtitle,
+                    color: Theme.of(context).primaryTextTheme.caption!.color,
+                  ),
+                ),
+              ),
+              SizedBox(height: 8.0),
+              Expanded(
+                child: Image.asset(
+                  item.image!,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
+          );
+        }).toList(),
+      ),
+      Divider(height: 1.0),
+      Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: Dimens.DEFAULT_PADDING,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: sliders.map((item) {
+            return Container(
+              width: 8.0,
+              height: 8.0,
+              margin: EdgeInsets.symmetric(horizontal: 6.0),
+              decoration: BoxDecoration(
+                border: currentIndex == item.id
+                    ? null
+                    : Border.all(
+                        color: Theme.of(context).unselectedWidgetColor,
+                      ),
+                color: currentIndex == item.id
+                    ? Theme.of(context).colorScheme.onBackground
+                    : null,
+                shape: BoxShape.circle,
+              ),
+            );
+          }).toList(),
+        ),
+      ),
+    ],
+  );
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">wmobile</a></li>
+  <li><a href="../../ui_welcome_welcome_slider/ui_welcome_welcome_slider-library.html">welcome_slider</a></li>
+  <li><a href="../../ui_welcome_welcome_slider/WelcomeSlider-class.html">WelcomeSlider</a></li>
+  <li class="self-crumb">build method</li>
+</ol>
+
+
+    <h5>WelcomeSlider class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../ui_welcome_welcome_slider/WelcomeSlider-class.html#constructors">Constructors</a></li>
+          <li><a href="../../ui_welcome_welcome_slider/WelcomeSlider/WelcomeSlider.html">WelcomeSlider</a></li>
+
+
+    <li class="section-title">
+      <a href="../../ui_welcome_welcome_slider/WelcomeSlider-class.html#instance-properties">Properties</a>
+    </li>
+    <li><a href="../../ui_welcome_welcome_slider/WelcomeSlider/currentIndex.html">currentIndex</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/key.html">key</a></li>
+    <li><a href="../../ui_welcome_welcome_slider/WelcomeSlider/locale.html">locale</a></li>
+    <li><a href="../../ui_welcome_welcome_slider/WelcomeSlider/onPageChanged.html">onPageChanged</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li><a href="../../ui_welcome_welcome_slider/WelcomeSlider/sliders.html">sliders</a></li>
+
+    <li class="section-title"><a href="../../ui_welcome_welcome_slider/WelcomeSlider-class.html#instance-methods">Methods</a></li>
+    <li><a href="../../ui_welcome_welcome_slider/WelcomeSlider/build.html">build</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/StatelessWidget/createElement.html">createElement</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/debugDescribeChildren.html">debugDescribeChildren</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/debugFillProperties.html">debugFillProperties</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toDiagnosticsNode.html">toDiagnosticsNode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toString.html">toString</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringDeep.html">toStringDeep</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringShallow.html">toStringShallow</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/toStringShort.html">toStringShort</a></li>
+
+    <li class="section-title inherited"><a href="../../ui_welcome_welcome_slider/WelcomeSlider-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

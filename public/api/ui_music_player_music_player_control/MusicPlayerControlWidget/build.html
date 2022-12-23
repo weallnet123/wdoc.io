@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the build method from the MusicPlayerControlWidget class, for the Dart programming language.">
+  <title>build method - MusicPlayerControlWidget class - music_player_control library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">wmobile</a></li>
+    <li><a href="../../ui_music_player_music_player_control/ui_music_player_music_player_control-library.html">music_player_control</a></li>
+    <li><a href="../../ui_music_player_music_player_control/MusicPlayerControlWidget-class.html">MusicPlayerControlWidget</a></li>
+    <li class="self-crumb">build method</li>
+  </ol>
+  <div class="self-name">build</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-method">build</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+<div>
+  <ol class="annotation-list">
+    <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+  </ol>
+</div>
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
+<span class="name ">build</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+</ol>)
+
+      <div class="features">override</div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Describes the part of the user interface represented by this widget.</p>
+<p>The framework calls this method when this widget is inserted into the tree
+in a given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> and when the dependencies of this widget change
+(e.g., an <a href="https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html">InheritedWidget</a> referenced by this widget changes). This
+method can potentially be called in every frame and should not have any side
+effects beyond building a widget.</p>
+<p>The framework replaces the subtree below this widget with the widget
+returned by this method, either by updating the existing subtree or by
+removing the subtree and inflating a new subtree, depending on whether the
+widget returned by this method can update the root of the existing
+subtree, as determined by calling <a href="https://api.flutter.dev/flutter/widgets/Widget/canUpdate.html">Widget.canUpdate</a>.</p>
+<p>Typically implementations return a newly created constellation of widgets
+that are configured with information from this widget's constructor and
+from the given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a>.</p>
+<p>The given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> contains information about the location in the
+tree at which this widget is being built. For example, the context
+provides the set of inherited widgets for this location in the tree. A
+given widget might be built with multiple different <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a>
+arguments over time if the widget is moved around the tree or if the
+widget is inserted into the tree in multiple places at once.</p>
+<p>The implementation of this method must only depend on:</p>
+<ul>
+<li>the fields of the widget, which themselves must not change over time,
+and</li>
+<li>any ambient state obtained from the <code>context</code> using
+<a href="https://api.flutter.dev/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html">BuildContext.dependOnInheritedWidgetOfExactType</a>.</li>
+</ul>
+<p>If a widget's <a href="../../ui_music_player_music_player_control/MusicPlayerControlWidget/build.html">build</a> method is to depend on anything else, use a
+<a href="https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html">StatefulWidget</a> instead.</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html">StatelessWidget</a>, which contains the discussion on performance considerations.</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+Widget build(BuildContext context) {
+  return Align(
+    alignment: Alignment.bottomCenter,
+    child: Container(
+      height: 100.0,
+      color: Theme.of(context).primaryColor,
+      padding: const EdgeInsets.only(bottom: 10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          StreamBuilder&lt;LoopMode&gt;(
+            stream: player.loopModeStream,
+            builder: (context, snapshot) {
+              final loopMode = snapshot.data ?? LoopMode.off;
+              List&lt;Icon&gt; icons = [
+                Icon(Icons.repeat, color: Colors.grey),
+                Icon(Icons.repeat,
+                    color: Theme.of(context).colorScheme.onBackground),
+                Icon(Icons.repeat_one,
+                    color: Theme.of(context).colorScheme.onBackground),
+              ];
+              const cycleModes = [
+                LoopMode.off,
+                LoopMode.all,
+                LoopMode.one,
+              ];
+              final index = cycleModes.indexOf(loopMode);
+              return IconButton(
+                icon: icons[index],
+                onPressed: () {
+                  player.setLoopMode(cycleModes[
+                      (cycleModes.indexOf(loopMode) + 1) %
+                          cycleModes.length]);
+                },
+              );
+            },
+          ),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                StreamBuilder&lt;SequenceState?&gt;(
+                  stream: player.sequenceStateStream,
+                  builder: (context, snapshot) =&gt; IconButton(
+                    icon: Icon(
+                      Icons.skip_previous,
+                      color: Theme.of(context).colorScheme.onBackground,
+                    ),
+                    onPressed:
+                        player.hasPrevious ? player.seekToPrevious : null,
+                  ),
+                ),
+                StreamBuilder&lt;PlayerState&gt;(
+                  stream: player.playerStateStream,
+                  builder: (context, snapshot) {
+                    final playerState = snapshot.data;
+                    final processingState = playerState?.processingState;
+                    final playing = playerState?.playing;
+                    bool loading =
+                        processingState == ProcessingState.loading ||
+                            processingState == ProcessingState.buffering;
+                    if (loading || playing == null) {
+                      return Container(
+                        width: 44.0,
+                        height: 44.0,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2.0,
+                          backgroundColor:
+                              Theme.of(context).colorScheme.onBackground,
+                          color: Colors.white,
+                        ),
+                      );
+                    }
+                    return IconButton(
+                      icon: Icon(
+                        playing
+                            ? Icons.pause_circle_outline
+                            : Icons.play_circle_outline,
+                        color: Theme.of(context).colorScheme.onBackground,
+                      ),
+                      iconSize: 44.0,
+                      onPressed: playing ? player.pause : player.play,
+                    );
+                  },
+                ),
+                StreamBuilder&lt;SequenceState?&gt;(
+                  stream: player.sequenceStateStream,
+                  builder: (context, snapshot) =&gt; IconButton(
+                    icon: Icon(
+                      Icons.skip_next,
+                      color: Theme.of(context).colorScheme.onBackground,
+                    ),
+                    onPressed: player.hasNext ? player.seekToNext : null,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          StreamBuilder&lt;bool&gt;(
+              stream: player.shuffleModeEnabledStream,
+              builder: (context, snapshot) {
+                final shuffleModeEnabled = snapshot.data ?? false;
+                return IconButton(
+                  icon: shuffleModeEnabled
+                      ? Icon(Icons.shuffle,
+                          color: Theme.of(context).colorScheme.onBackground)
+                      : Icon(Icons.shuffle, color: Colors.grey),
+                  onPressed: () async {
+                    final enable = !shuffleModeEnabled;
+                    if (enable) {
+                      await player.shuffle();
+                    }
+                    await player.setShuffleModeEnabled(enable);
+                  },
+                );
+              })
+        ],
+      ),
+    ),
+  );
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">wmobile</a></li>
+  <li><a href="../../ui_music_player_music_player_control/ui_music_player_music_player_control-library.html">music_player_control</a></li>
+  <li><a href="../../ui_music_player_music_player_control/MusicPlayerControlWidget-class.html">MusicPlayerControlWidget</a></li>
+  <li class="self-crumb">build method</li>
+</ol>
+
+
+    <h5>MusicPlayerControlWidget class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../ui_music_player_music_player_control/MusicPlayerControlWidget-class.html#constructors">Constructors</a></li>
+          <li><a href="../../ui_music_player_music_player_control/MusicPlayerControlWidget/MusicPlayerControlWidget.html">MusicPlayerControlWidget</a></li>
+
+
+    <li class="section-title">
+      <a href="../../ui_music_player_music_player_control/MusicPlayerControlWidget-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/key.html">key</a></li>
+    <li><a href="../../ui_music_player_music_player_control/MusicPlayerControlWidget/loading.html">loading</a></li>
+    <li><a href="../../ui_music_player_music_player_control/MusicPlayerControlWidget/player.html">player</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+
+    <li class="section-title"><a href="../../ui_music_player_music_player_control/MusicPlayerControlWidget-class.html#instance-methods">Methods</a></li>
+    <li><a href="../../ui_music_player_music_player_control/MusicPlayerControlWidget/build.html">build</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/StatelessWidget/createElement.html">createElement</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/debugDescribeChildren.html">debugDescribeChildren</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/debugFillProperties.html">debugFillProperties</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toDiagnosticsNode.html">toDiagnosticsNode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toString.html">toString</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringDeep.html">toStringDeep</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringShallow.html">toStringShallow</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/toStringShort.html">toStringShort</a></li>
+
+    <li class="section-title inherited"><a href="../../ui_music_player_music_player_control/MusicPlayerControlWidget-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/Widget/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

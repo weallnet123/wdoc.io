@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the saveVideoInfluencer method from the VideoInfluencerViewModel class, for the Dart programming language.">
+  <title>saveVideoInfluencer method - VideoInfluencerViewModel class - video_influencer_viewmodel library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">wmobile</a></li>
+    <li><a href="../../view_model_video_influencer_video_influencer_viewmodel/view_model_video_influencer_video_influencer_viewmodel-library.html">video_influencer_viewmodel</a></li>
+    <li><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel-class.html">VideoInfluencerViewModel</a></li>
+    <li class="self-crumb">saveVideoInfluencer method</li>
+  </ol>
+  <div class="self-name">saveVideoInfluencer</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-method">saveVideoInfluencer</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a></span>
+<span class="name ">saveVideoInfluencer</span>(<wbr>)
+
+      <div class="features">inherited</div>
+
+    </section>
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Future saveVideoInfluencer() async {
+  apiStatusStore = ApiStatusStore();
+  processing.setProcessing(&#39;VideoInfluencer&#39;, true, &#39;&#39;);
+  apiStatusStore.setApiLoading(processing.arrProcessing[&#39;VideoInfluencer&#39;]);
+  try {
+    String saveUrl = getUrls[&#39;saveVideoInfluencer&#39;].toString();
+    var res = await _dioClient.post(saveUrl,
+        data: jsonEncode(convertVideoInfluencerToObject(videoInfluencer)));
+    if (res[&#39;result&#39;] == &#39;Success&#39;) {
+      videoInfluencer = convertDataToVideoInfluencer(res[&#39;videoInfluencer&#39;]);
+      videoInfluencerID = videoInfluencer.videoInfluencerID;
+      apiStatusStore.setApiSuccess();
+    } else {
+      apiStatusStore.setApiUnsuccess(
+        res[&#39;errorMessage&#39;].toString(),
+        res[&#39;errorMessage&#39;].toString(),
+      );
+      Catcher.reportCheckedError(
+          res[&#39;errorMessage&#39;].toString(), StackTrace.empty);
+    }
+  } catch (error, stackTrace) {
+    NetworkExceptionText errorMessage =
+        NetworkException.getDioException(error);
+    apiStatusStore.setApiError(
+      errorMessage.errorMessageVI,
+      errorMessage.errorMessageUS,
+    );
+    Catcher.reportCheckedError(error, stackTrace);
+  }
+  processing.setProcessing(&#39;VideoInfluencer&#39;, false, &#39;&#39;);
+  apiStatusStore.setApiLoading(processing.arrProcessing[&#39;VideoInfluencer&#39;]);
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">wmobile</a></li>
+  <li><a href="../../view_model_video_influencer_video_influencer_viewmodel/view_model_video_influencer_video_influencer_viewmodel-library.html">video_influencer_viewmodel</a></li>
+  <li><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel-class.html">VideoInfluencerViewModel</a></li>
+  <li class="self-crumb">saveVideoInfluencer method</li>
+</ol>
+
+
+    <h5>VideoInfluencerViewModel class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel-class.html#constructors">Constructors</a></li>
+          <li><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/VideoInfluencerViewModel.html">VideoInfluencerViewModel</a></li>
+
+
+    <li class="section-title inherited">
+      <a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/apiStatusStore.html">apiStatusStore</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/arrSearchParam.html">arrSearchParam</a></li>
+    <li class="inherited"><a href="https://pub.dev/documentation/mobx/2.0.7/mobx/Store/context.html">context</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/getUrls.html">getUrls</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/processing.html">processing</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/videoInfluencer.html">videoInfluencer</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/videoInfluencerID.html">videoInfluencerID</a></li>
+
+    <li class="section-title inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel-class.html#instance-methods">Methods</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/convertDataToVideoInfluencer.html">convertDataToVideoInfluencer</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/convertVideoInfluencerToObject.html">convertVideoInfluencerToObject</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/deleteVideoInfluencer.html">deleteVideoInfluencer</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/getSearchParam.html">getSearchParam</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/initData.html">initData</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/initLocalData.html">initLocalData</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/initModel.html">initModel</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/initVideoInfluencer.html">initVideoInfluencer</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/saveVideoInfluencer.html">saveVideoInfluencer</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/setSearchParam.html">setSearchParam</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/setVideoInfluencerID.html">setVideoInfluencerID</a></li>
+    <li class="inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel/toString.html">toString</a></li>
+
+    <li class="section-title inherited"><a href="../../view_model_video_influencer_video_influencer_viewmodel/VideoInfluencerViewModel-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

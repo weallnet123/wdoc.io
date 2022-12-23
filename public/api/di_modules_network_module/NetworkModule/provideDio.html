@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the provideDio method from the NetworkModule class, for the Dart programming language.">
+  <title>provideDio method - NetworkModule class - network_module library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">wmobile</a></li>
+    <li><a href="../../di_modules_network_module/di_modules_network_module-library.html">network_module</a></li>
+    <li><a href="../../di_modules_network_module/NetworkModule-class.html">NetworkModule</a></li>
+    <li class="self-crumb">provideDio method</li>
+  </ol>
+  <div class="self-name">provideDio</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://gitlab.weallnet.com/nghia.doan/wmobile-documentation%"><i class="material-icons">description</i></a></div>
+<h1><span class="kind-method">provideDio</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+<div>
+  <ol class="annotation-list">
+    <li>@<a href="https://pub.dev/documentation/injectable/1.5.3/injectable/factoryMethod-constant.html">factoryMethod</a></li>
+  </ol>
+</div>
+
+<span class="returntype"><a href="https://pub.dev/documentation/dio/4.0.6/dio/Dio-class.html">Dio</a></span>
+<span class="name ">provideDio</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="provideDio-param-sharedPrefHelper"><span class="type-annotation"><a href="../../data_sharedpref_shared_preference_helper/SharedPreferenceHelper-class.html">SharedPreferenceHelper</a></span> <span class="parameter-name">sharedPrefHelper</span></span></li>
+</ol>)
+
+      <div class="features">@<a href="https://pub.dev/documentation/injectable/1.5.3/injectable/factoryMethod-constant.html">factoryMethod</a></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>A singleton dio provider.</p>
+<p>Calling it multiple times will return the same instance.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@factoryMethod
+Dio provideDio(SharedPreferenceHelper sharedPrefHelper) {
+  final dio = Dio();
+  dio
+    ..options.baseUrl = Endpoints.baseUrl
+    ..options.connectTimeout = Endpoints.connectionTimeout
+    ..options.receiveTimeout = Endpoints.receiveTimeout
+    ..options.headers = {&#39;Content-Type&#39;: &#39;application&#47;json; charset=utf-8&#39;}
+    &#47;&#47; ..interceptors.add(
+    &#47;&#47;   InterceptorsWrapper(
+    &#47;&#47;     onRequest: (Options options) async {
+    &#47;&#47; AuthorizeModel authData = await sharedPrefHelper.authData;
+    &#47;&#47; if (authData != null) {
+    &#47;&#47;   if (authData.accessToken != null) {
+    &#47;&#47;     options.headers.putIfAbsent(
+    &#47;&#47;         &#39;Authorization&#39;, () =&gt; &#39;Bearer &#39; + authData.accessToken);
+    &#47;&#47;   } else {
+    &#47;&#47;     print(&#39;Auth token is null&#39;);
+    &#47;&#47;   }
+    &#47;&#47;       }
+    &#47;&#47;     },
+    &#47;&#47;     onError: (error) {
+    &#47;&#47; if (error.response?.statusCode == 401) {
+    &#47;&#47;   Options options = error.response.request;
+    &#47;&#47;   &#47;&#47; If the token has been updated, repeat directly.
+    &#47;&#47;   if (csrfToken != options.headers[&#39;csrfToken&#39;]) {
+    &#47;&#47;     options.headers[&#39;csrfToken&#39;] = csrfToken;
+    &#47;&#47;     &#47;&#47;repeat
+    &#47;&#47;     return dio.request(options.path, options: options);
+    &#47;&#47;   }
+    &#47;&#47;   &#47;&#47; update token and repeat
+    &#47;&#47;   &#47;&#47; Lock to block the incoming request until the token updated
+    &#47;&#47;   dio.interceptor.request.lock();
+    &#47;&#47;   dio.interceptor.response.lock();
+    &#47;&#47;   return tokenDio.get(&#39;&#47;token&#39;).then((d) {
+    &#47;&#47;     &#47;&#47;update csrfToken
+    &#47;&#47;     options.headers[&#39;csrfToken&#39;] =
+    &#47;&#47;         csrfToken = d.data[&#39;data&#39;][&#39;token&#39;];
+    &#47;&#47;   }).whenComplete(() {
+    &#47;&#47;     dio.interceptor.request.unlock();
+    &#47;&#47;     dio.interceptor.response.unlock();
+    &#47;&#47;   }).then((e) {
+    &#47;&#47;     &#47;&#47;repeat
+    &#47;&#47;     return dio.request(options.path, options: options);
+    &#47;&#47;   });
+    &#47;&#47; }
+    &#47;&#47;       return error;
+    &#47;&#47;     },
+    &#47;&#47;   ),
+    &#47;&#47; )
+    ..interceptors.add(RetryInterceptor(
+      sharedPrefHelper: sharedPrefHelper,
+      dio: dio,
+      options: const RetryOptions(
+        retries: 3,
+        retryInterval: Duration(seconds: 10),
+      ),
+      requestRetrier: DioRequestRetrier(
+        dio: dio,
+        sharedPrefHelper: sharedPrefHelper,
+        connectivity: Connectivity(),
+      ),
+    ));
+  if (kDebugMode) {
+    dio.interceptors.add(LogInterceptor(
+      request: true,
+      responseBody: true,
+      requestBody: true,
+      requestHeader: true,
+      error: true,
+    ));
+  }
+  return dio;
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">wmobile</a></li>
+  <li><a href="../../di_modules_network_module/di_modules_network_module-library.html">network_module</a></li>
+  <li><a href="../../di_modules_network_module/NetworkModule-class.html">NetworkModule</a></li>
+  <li class="self-crumb">provideDio method</li>
+</ol>
+
+
+    <h5>NetworkModule class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../di_modules_network_module/NetworkModule-class.html#constructors">Constructors</a></li>
+          <li><a href="../../di_modules_network_module/NetworkModule/NetworkModule.html">NetworkModule</a></li>
+
+
+    <li class="section-title">
+      <a href="../../di_modules_network_module/NetworkModule-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li><a href="../../di_modules_network_module/NetworkModule/TAG.html">TAG</a></li>
+
+    <li class="section-title"><a href="../../di_modules_network_module/NetworkModule-class.html#instance-methods">Methods</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li><a href="../../di_modules_network_module/NetworkModule/provideDio.html">provideDio</a></li>
+    <li><a href="../../di_modules_network_module/NetworkModule/provideDioClient.html">provideDioClient</a></li>
+    <li><a href="../../di_modules_network_module/NetworkModule/provideRestClient.html">provideRestClient</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
+
+    <li class="section-title inherited"><a href="../../di_modules_network_module/NetworkModule-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    wmobile
+      1.8.7+325
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
